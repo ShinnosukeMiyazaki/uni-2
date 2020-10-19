@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import Logo from "../../../assets/images/header-logo.png";
 
@@ -22,7 +23,7 @@ const HeaderLogo = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   width: 240px;
-  height: 100%;
+  height: 75px;
 `;
 
 const NavWrapper = styled.ul`
@@ -44,12 +45,24 @@ const NavItem = styled.li`
 const Header = () => {
   return (
     <HeaderWrap>
-      <HeaderLogo />
+      <Link to="/">
+        <HeaderLogo />
+      </Link>
       <NavWrapper>
-        <NavItem>Lesson</NavItem>
-        <NavItem>Team</NavItem>
-        <NavItem>Studio</NavItem>
-        <NavItem>Contact</NavItem>
+        <NavItem>
+          <Link style={{ color: "black" }} to="/lesson">
+            Lesson
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link to="/lesson">Lesson</Link>
+        </NavItem>
+        <NavItem>
+          <Link to="/lesson">Lesson</Link>
+        </NavItem>
+        <NavItem>
+          <Link to="/lesson">Lesson</Link>
+        </NavItem>
       </NavWrapper>
     </HeaderWrap>
   );

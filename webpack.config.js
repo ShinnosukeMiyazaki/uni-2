@@ -11,6 +11,10 @@ module.exports = {
     filename: "bundle.js",
   },
   mode: "development",
+  devServer: {
+    historyApiFallback: true,
+    port: 4000,
+  },
   module: {
     rules: [
       {
