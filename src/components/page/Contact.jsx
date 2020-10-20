@@ -47,7 +47,12 @@ const Contact = () => {
   return (
     <>
       <Title title="CONTACT" />
-      <form name="contact" method="POST" data-netlify="true">
+      <form
+        name="contact"
+        action="/contact/success/"
+        method="POST"
+        data-netlify="true"
+      >
         <ContactItemWrapper>
           <li style={{ width: "45%", marginBottom: "20px" }}>
             <Label htmlFor="name">NAME</Label>
