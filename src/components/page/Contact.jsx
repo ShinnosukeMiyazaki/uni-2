@@ -53,6 +53,11 @@ const Contact = () => {
         method="POST"
         data-netlify="true"
       >
+        <input
+          type="hidden"
+          name="form-name"
+          value="the-name-of-the-html-form"
+        />
         <ContactItemWrapper>
           <li style={{ width: "45%", marginBottom: "20px" }}>
             <Label htmlFor="name">NAME</Label>
