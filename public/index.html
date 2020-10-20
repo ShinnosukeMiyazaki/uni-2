@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>チアダンススタジオ uni</title>
-    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="../public/css/reset.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap"
       rel="stylesheet"
@@ -15,7 +15,13 @@
     />
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   </head>
-  <div id="root"></div>
+
   <body>
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+    <div id="root"></div>
     <!-- <script src="./bundle.js"></script> -->
 </html>
