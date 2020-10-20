@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 import Logo from "../../../assets/images/header-logo.png";
 
 const HeaderWrap = styled.header`
+  z-index: 3;
   width: 100%;
   height: 75px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(236, 240, 241, 0.8);
   padding: 0 20px;
   display: flex;
   align-items: center;
@@ -50,18 +51,16 @@ const Header = () => {
       </Link>
       <NavWrapper>
         <NavItem>
-          <Link style={{ color: "black" }} to="/lesson">
-            Lesson
-          </Link>
+          <Link to="/lesson">LESSON</Link>
         </NavItem>
         <NavItem>
-          <Link to="/lesson">Lesson</Link>
+          <Link to="/team">TEAM</Link>
         </NavItem>
         <NavItem>
-          <Link to="/lesson">Lesson</Link>
+          <Link to="/studio">STUDIO</Link>
         </NavItem>
         <NavItem>
-          <Link to="/lesson">Lesson</Link>
+          <Link to="/contact">CONTACT</Link>
         </NavItem>
       </NavWrapper>
     </HeaderWrap>

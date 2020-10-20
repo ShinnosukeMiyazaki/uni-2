@@ -55,7 +55,7 @@ const PomdollTextContainer = styled.div`
   margin-top: 30px;
   padding: 30px 5px;
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bolder;
   line-height: 28px;
 `;
@@ -66,7 +66,7 @@ const App = () => {
       <BigLogo />
       <PomdollContainer>
         <PomdollLogo />
-        <PomdollTextContainer>
+        {/*<PomdollTextContainer>
           <p>
             Pomdollは、2016年より石川県内で活動をスタートした、
             年中〜小・中学生のGirlsを対象にしたキッズチアダンスチームです。
@@ -78,7 +78,7 @@ const App = () => {
             踊っている本人だけではなく、Pomdollのダンスを見ていただいた方々に
             楽しい気持ちや元気を届けられる様なそんなパワー溢れるチームを目指しています。
           </p>
-        </PomdollTextContainer>
+        </PomdollTextContainer>*/}
       </PomdollContainer>
     </Container>
   );

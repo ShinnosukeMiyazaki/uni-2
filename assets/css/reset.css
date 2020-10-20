@@ -87,10 +87,13 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 62.5%;
   vertical-align: baseline;
   box-sizing: border-box;
-  font-family: "游ゴシック体", YuGothic;
+  /*font-family: "游ゴシック体", YuGothic;*/
+}
+body,
+html {
+  font-size: 62.5%;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -139,8 +142,18 @@ a {
 *    
 */
 
-body {
+body,
+html {
   padding-top: 75px;
   position: relative;
-  background-color: white;
+  min-height: 100vh;
+  background-color: #ecf0f1;
+  padding-bottom: 120px;
+  color: #2c3e50;
+  font-family: "Lato", sans-serif;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
 }

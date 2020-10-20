@@ -5,7 +5,8 @@ const FooterContainer = styled.footer`
   width: 100%;
   display: flex;
   padding: 40px 0;
-  background-color: #2c3e50;
+  /*background-color: #2c3e50;*/
+  margin-top: auto;
 `;
 
 const Footer = () => {

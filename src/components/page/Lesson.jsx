@@ -5,7 +5,7 @@ import Title from "../common/PageTitle.jsx";
 
 const TableContainer = styled.table`
   width: 100%;
-  border: 2px solid black;
+  border: 2px solid #34495e;
   margin-bottom: 15px;
 `;
 const TimetableCell = styled.th`
@@ -13,9 +13,8 @@ const TimetableCell = styled.th`
   font-size: 18px;
   padding: 15px 0;
   text-align: center;
-  font-weight: bold;
-  border-right: 2px solid black;
-  background-color: black;
+  border-right: 2px solid #34495e;
+  background-color: #34495e;
   color: white;
 `;
 const AllocationCell = styled.th`
@@ -23,16 +22,15 @@ const AllocationCell = styled.th`
   font-size: 18px;
   padding: 15px 0;
   text-align: center;
-  font-weight: bold;
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
+  border-right: 2px solid #34495e;
+  border-bottom: 2px solid #34495e;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 const TableShortContainer = styled.table`
   width: 50%;
-  border: 2px solid black;
+  border: 2px solid #34495e;
   margin-bottom: 15px;
 `;
 const TimetableLongCell = styled.th`
@@ -40,9 +38,8 @@ const TimetableLongCell = styled.th`
   font-size: 18px;
   padding: 15px 0;
   text-align: center;
-  font-weight: bold;
-  border-right: 2px solid black;
-  background-color: black;
+  border-right: 2px solid #34495e;
+  background-color: #34495e;
   color: white;
 `;
 const AllocationLongCell = styled.th`
@@ -50,9 +47,8 @@ const AllocationLongCell = styled.th`
   font-size: 18px;
   padding: 15px 0;
   text-align: center;
-  font-weight: bold;
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
+  border-right: 2px solid #34495e;
+  border-bottom: 2px solid #34495e;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,7 +57,7 @@ const AllocationLongCell = styled.th`
 const Lesson = () => {
   return (
     <React.Fragment>
-      <Title title="Lesson Schedule"></Title>
+      <Title title="LESSON SCHEDULE"></Title>
       <TableContainer>
         <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
           <TimetableCell></TimetableCell>
@@ -107,9 +103,9 @@ const Lesson = () => {
         </tr>{" "}
         <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
           <TimetableCell>
-            16:00
+            18:50
             <br />|<br />
-            17:20
+            19:40
           </TimetableCell>
           <AllocationCell></AllocationCell>
           <AllocationCell>
@@ -124,14 +120,14 @@ const Lesson = () => {
           </AllocationCell>
         </tr>{" "}
         <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
-          <TimetableCell>
-            16:00
+          <TimetableCell style={{ borderBottom: "none" }}>
+            20:00
             <br />|<br />
-            17:20
+            21:00
           </TimetableCell>
-          <AllocationCell></AllocationCell>
-          <AllocationCell></AllocationCell>
-          <AllocationCell style={{ borderRight: "none" }}>
+          <AllocationCell style={{ borderBottom: "none" }}></AllocationCell>
+          <AllocationCell style={{ borderBottom: "none" }}></AllocationCell>
+          <AllocationCell style={{ borderRight: "none", borderBottom: "none" }}>
             Teen's
             <br />
             中学生以上
@@ -149,19 +145,23 @@ const Lesson = () => {
             <br />|<br />
             19:30
           </TimetableLongCell>
-          <AllocationLongCell>
+          <AllocationLongCell style={{ borderRight: "none" }}>
             基礎
             <br />
             小学生以上
           </AllocationLongCell>
         </tr>
         <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
-          <TimetableLongCell>
+          <TimetableLongCell style={{ borderBottom: "none" }}>
             19:30
             <br />|<br />
             20:30
           </TimetableLongCell>
-          <AllocationLongCell>S</AllocationLongCell>
+          <AllocationLongCell
+            style={{ borderRight: "none", borderBottom: "none" }}
+          >
+            S
+          </AllocationLongCell>
         </tr>
       </TableShortContainer>
     </React.Fragment>
