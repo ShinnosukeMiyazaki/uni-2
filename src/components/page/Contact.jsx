@@ -77,9 +77,9 @@ const Contact = () => {
     e.preventDefault();
   };
 
-  const nameHandleChange = (e) => setName(setName(e.target.value));
-  const emailHandleChange = (e) => setEmail(setEmail(e.target.value));
-  const messageHandleChange = (e) => setMessage(setMessage(e.target.value));
+  const nameHandleChange = (e) => setName(e.target.value);
+  const emailHandleChange = (e) => setEmail(e.target.value);
+  const messageHandleChange = (e) => setMessage(e.target.value);
   return (
     <>
       <Title title="CONTACT" />
