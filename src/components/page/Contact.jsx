@@ -47,7 +47,7 @@ const Contact = () => {
   return (
     <>
       <Title title="CONTACT" />
-      <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" method="POST" action="/thanks" data-netlify="true">
         <input
           type="hidden"
           name="form-name"

@@ -9,6 +9,7 @@ import Lesson from "./components/page/Lesson.jsx";
 import Team from "./components/page/Team.jsx";
 import Studio from "./components/page/Studio.jsx";
 import Contact from "./components/page/Contact.jsx";
+import Thanks from "./components/page/Thanks.jsx";
 import Header from "./components/common/Header.jsx";
 import Footer from "./components/common/Footer.jsx";
 
@@ -19,7 +20,7 @@ const Container = styled.div`
   padding: 0 15px;
   opacity: ${({ load }) => (load ? 1 : 0)};
   transform: ${({ load }) => (load ? "scale(1)" : "scale(2)")};
-  transition: all 0.8s;
+  transition: all 1.4s;
 `;
 
 const Index = () => {
@@ -27,7 +28,7 @@ const Index = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoad(true);
-    }, 750);
+    }, 500);
   }, []);
   return (
     <Router>
@@ -39,6 +40,7 @@ const Index = () => {
           <Route path="/team" component={Team} />
           <Route path="/studio" component={Studio} />
           <Route path="/contact" component={Contact} />
+          <Route path="/thanks" component={Thanks} />
           <Route component={NotFound} />
         </Switch>
       </Container>
