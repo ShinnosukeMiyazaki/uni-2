@@ -71,7 +71,7 @@ const Contact = () => {
         message: message,
       }),
     })
-      .then(() => history.push("/thanks"))
+      .then(() => /*history.push("/thanks")*/ console.log("やあ"))
       .catch((error) => alert(error));
 
     e.preventDefault();
