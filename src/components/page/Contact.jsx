@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 import Title from "../common/PageTitle.jsx";
 
@@ -44,6 +45,7 @@ const Button = styled.button`
 `;
 
 const Contact = () => {
+  const history = useHistory();
   return (
     <>
       <Title title="CONTACT" />
@@ -79,7 +81,7 @@ const Contact = () => {
               name="message"
             />
           </li>
-          <Button>Send Message</Button>
+          <Button onClick={() => history.push("/thanks")}>Send Message</Button>
         </ContactItemWrapper>
         {/*
         <p>
