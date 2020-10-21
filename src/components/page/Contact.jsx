@@ -46,6 +46,40 @@ const Button = styled.button`
 
 const Contact = () => {
   const history = useHistory();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
+  /* Here’s the juicy bit for posting the form submission */
+
+  const handleSubmit = (e) => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "contact",
+        name: name,
+        email: email,
+        message: message,
+      }),
+    })
+      .then(() => console.log("Success!"))
+      .catch((error) => alert(error));
+
+    e.preventDefault();
+  };
+
+  const nameHandleChange = (e) => setName(setName(e.target.value));
+  const emailHandleChange = (e) => setEmail(setEmail(e.target.value));
+  const messageHandleChange = (e) => setMessage(setMessage(e.target.value));
   return (
     <>
       <Title title="CONTACT" />
@@ -55,17 +89,24 @@ const Contact = () => {
         action="/thanks"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />
         <ContactItemWrapper>
           <li style={{ width: "45%", marginBottom: "20px" }}>
             <Label htmlFor="name">NAME</Label>
-            <ContactItem placeholder="Your Name" id="name" name="name" />
+            <ContactItem
+              onChange={nameHandleChange}
+              placeholder="Your Name"
+              id="name"
+              name="name"
+            />
           </li>
           <li style={{ width: "45%", marginBottom: "20px" }}>
             <Label htmlFor="email">MAIL</Label>
             <ContactItem
+              onChange={emailHandleChange}
               placeholder="Email Address"
               id="email"
               type="email"
@@ -75,13 +116,16 @@ const Contact = () => {
           <li style={{ width: "100%", marginBottom: "20px" }}>
             <Label htmlFor="message">MESSAGE</Label>
             <MessageArea
+              onChange={messageHandleChange}
               placeholder="Put message here"
               id="message"
               row="4"
               name="message"
             />
           </li>
-          <Button onClick={() => history.push("/thanks")}>Send Message</Button>
+          <Button type="submit" onClick={() => history.push("/thanks")}>
+            Send Message
+          </Button>
         </ContactItemWrapper>
         {/*
         <p>
