@@ -71,7 +71,7 @@ const Contact = () => {
         message: message,
       }),
     })
-      .then(() => console.log("Success!"))
+      .then(() => history.push("/thanks"))
       .catch((error) => alert(error));
 
     e.preventDefault();
@@ -123,9 +123,7 @@ const Contact = () => {
               name="message"
             />
           </li>
-          <Button type="submit" onClick={() => history.push("/thanks")}>
-            Send Message
-          </Button>
+          <Button type="submit">Send Message</Button>
         </ContactItemWrapper>
         {/*
         <p>
