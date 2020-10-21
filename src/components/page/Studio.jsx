@@ -62,8 +62,16 @@ const Studio = () => {
     <>
       <Title title="STUDIO"></Title>
       <StudioImageContainer>
-        <StudioImage src={StudioImg1} opacity={studio1Opacity} />
-        <StudioImage src={StudioImg2} opacity={studio2Opacity} />
+        <StudioImage
+          decoding="async"
+          src={StudioImg1}
+          opacity={studio1Opacity}
+        />
+        <StudioImage
+          decoding="async"
+          src={StudioImg2}
+          opacity={studio2Opacity}
+        />
       </StudioImageContainer>
       <SectionWrapper>
         <SubTitle>定休日</SubTitle>

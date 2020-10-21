@@ -15,7 +15,7 @@ const Label = styled.label`
 
 const ContactItem = styled.input`
   padding: 10px 20px;
-  border: 1px solid black;
+  border: 1px solid #2c3e50;
   width: 100%;
   font-size: 1.6rem;
   margin-top: 15px;
@@ -23,7 +23,7 @@ const ContactItem = styled.input`
 
 const MessageArea = styled.textarea`
   padding: 10px 20px;
-  border: 1px solid black;
+  border: 1px solid #2c3e50;
   width: 100%;
   font-size: 1.6rem;
   margin-top: 15px;
@@ -47,12 +47,15 @@ const Contact = () => {
   return (
     <>
       <Title title="CONTACT" />
-      <form name="contact" method="POST" action="/thanks" data-netlify="true">
-        <input
-          type="hidden"
-          name="form-name"
-          value="the-name-of-the-html-form"
-        />
+      <form
+        name="contact"
+        method="POST"
+        action="/thanks"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="form-name" value="contact" />
         <ContactItemWrapper>
           <li style={{ width: "45%", marginBottom: "20px" }}>
             <Label htmlFor="name">NAME</Label>
