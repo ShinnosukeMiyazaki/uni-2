@@ -41,7 +41,6 @@ const NavItem = styled.li`
   cursor: pointer;
   font-family: "Kumbh Sans", sans-serif;
   height: 100%;
-  padding: 0 30px;
   position: relative;
   &:after {
     content: "";
@@ -74,6 +73,7 @@ const Header = () => {
               height: "100%",
               display: "flex",
               alignItems: "center",
+              padding: "0 30px",
             }}
             to="/lesson"
           >
@@ -86,6 +86,7 @@ const Header = () => {
               height: "100%",
               display: "flex",
               alignItems: "center",
+              padding: "0 30px",
             }}
             to="/team"
           >
@@ -98,6 +99,7 @@ const Header = () => {
               height: "100%",
               display: "flex",
               alignItems: "center",
+              padding: "0 30px",
             }}
             to="/studio"
           >
@@ -110,6 +112,7 @@ const Header = () => {
               height: "100%",
               display: "flex",
               alignItems: "center",
+              padding: "0 30px",
             }}
             to="/contact"
           >
