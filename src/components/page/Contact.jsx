@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
 
 import Title from "../common/PageTitle.jsx";
 
@@ -45,7 +44,7 @@ const Button = styled.button`
 `;
 
 const Contact = () => {
-  const history = useHistory();
+  /*const history = useHistory();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -58,7 +57,7 @@ const Contact = () => {
       .join("&");
   };
 
-  /* Here’s the juicy bit for posting the form submission */
+  Here’s the juicy bit for posting the form submission 
 
   const handleSubmit = (e) => {
     fetch("/", {
@@ -71,7 +70,7 @@ const Contact = () => {
         message: message,
       }),
     })
-      .then(() => /*history.push("/thanks")*/ console.log("やあ"))
+      .then(() => history.push("/thanks") console.log("やあ"))
       .catch((error) => alert(error));
 
     e.preventDefault();
@@ -79,7 +78,7 @@ const Contact = () => {
 
   const nameHandleChange = (e) => setName(e.target.value);
   const emailHandleChange = (e) => setEmail(e.target.value);
-  const messageHandleChange = (e) => setMessage(e.target.value);
+  const messageHandleChange = (e) => setMessage(e.target.value);*/
   return (
     <>
       <Title title="CONTACT" />
@@ -89,24 +88,17 @@ const Contact = () => {
         action="/thanks"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
       >
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />
         <ContactItemWrapper>
           <li style={{ width: "45%", marginBottom: "20px" }}>
             <Label htmlFor="name">NAME</Label>
-            <ContactItem
-              onChange={nameHandleChange}
-              placeholder="Your Name"
-              id="name"
-              name="name"
-            />
+            <ContactItem placeholder="Your Name" id="name" name="name" />
           </li>
           <li style={{ width: "45%", marginBottom: "20px" }}>
             <Label htmlFor="email">MAIL</Label>
             <ContactItem
-              onChange={emailHandleChange}
               placeholder="Email Address"
               id="email"
               type="email"
@@ -116,7 +108,6 @@ const Contact = () => {
           <li style={{ width: "100%", marginBottom: "20px" }}>
             <Label htmlFor="message">MESSAGE</Label>
             <MessageArea
-              onChange={messageHandleChange}
               placeholder="Put message here"
               id="message"
               row="4"
