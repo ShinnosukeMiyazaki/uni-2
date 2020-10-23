@@ -46,6 +46,9 @@ const PomdollImage = styled.img`
   opacity: ${(props) => (props.opacity ? 1 : 0)};
   border-radius: 8px;
   position: absolute;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 /*const Smp = styled.div`
   position: absolute;
