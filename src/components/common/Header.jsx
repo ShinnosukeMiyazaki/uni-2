@@ -155,7 +155,7 @@ const ResponsiveNaviSecond = styled.li`
   width: 100%;
   height: 25%;
   background-color: #34495e;
-  transition: all 0.5s;
+  transition: all 0.4s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -179,7 +179,7 @@ const ResponsiveNaviThird = styled.li`
   width: 100%;
   height: 25%;
   background-color: #2c3e50;
-  transition: all 0.8s;
+  transition: all 0.6s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -202,7 +202,7 @@ const ResponsiveNaviFourth = styled.li`
   width: 100%;
   height: 25%;
   background-color: #34495e;
-  transition: all 1s;
+  transition: all 0.8s;
   display: flex;
   justify-content: center;
   align-items: center;
