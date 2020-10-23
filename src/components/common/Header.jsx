@@ -25,6 +25,7 @@ const HeaderLogo = styled.div`
   background-position: center;
   width: 240px;
   height: 75px;
+  cursor: pointer;
 `;
 
 const NavWrapper = styled.ul`
@@ -127,12 +128,19 @@ const ResponsiveNaviWrapper = styled.ul`
   font-size: 22px;
   display: flex;
   flex-direction: column;
-  ${(props) => (props.isActive ? "z-index: 999;;" : "z-index: -1;")}
+  z-index: 999;
 `;
 
 const ResponsiveNaviFirst = styled.li`
   width: 100%;
-  height: 25%;
+  height: -webkit-calc(25% - 25px); /*Chrome19~25対応*/
+  height: -moz-calc(25% - 25px); /*Firefox4~15対応*/
+  height: calc(25% - 25px);
+  position: fixed;
+  top: 100px;
+  z-index: 999;
+  color: white;
+  font-size: 22px;
   background-color: #2c3e50;
   transition: all 0.2s;
   display: flex;
@@ -151,6 +159,17 @@ const ResponsiveNaviSecond = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 22px;
+  height: -webkit-calc(25% - 25px); /*Chrome19~25対応*/
+  height: -moz-calc(25% - 25px); /*Firefox4~15対応*/
+  height: calc(25% - 25px);
+  position: fixed;
+  top: -webkit-calc(25% - 25px + 100px); /*Chrome19~25対応*/
+  top: -moz-calc(25% - 25px + 100px); /*Firefox4~15対応*/
+  top: calc(25% - 25px + 100px);
+  z-index: 999;
+  color: white;
+
   ${(props) =>
     props.isActive
       ? "transform:translateX(0%);"
@@ -164,6 +183,16 @@ const ResponsiveNaviThird = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 22px;
+  height: -webkit-calc(25% - 25px); /*Chrome19~25対応*/
+  height: -moz-calc(25% - 25px); /*Firefox4~15対応*/
+  height: calc(25% - 25px);
+  position: fixed;
+  top: -webkit-calc(50% - 50px + 100px); /*Chrome19~25対応*/
+  top: -moz-calc(50% - 50px + 100px); /*Firefox4~15対応*/
+  top: calc(50% - 50px + 100px);
+  z-index: 999;
+  color: white;
   ${(props) =>
     props.isActive
       ? "transform:translateX(0%);"
@@ -177,6 +206,16 @@ const ResponsiveNaviFourth = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: -webkit-calc(25% - 25px); /*Chrome19~25対応*/
+  height: -moz-calc(25% - 25px); /*Firefox4~15対応*/
+  height: calc(25% - 25px);
+  position: fixed;
+  top: -webkit-calc(75% - 75px + 100px); /*Chrome19~25対応*/
+  top: -moz-calc(75% - 75px + 100px); /*Firefox4~15対応*/
+  top: calc(75% - 75px + 100px);
+  z-index: 999;
+  color: white;
+  font-size: 22px;
   ${(props) =>
     props.isActive
       ? "transform:translateX(0%);"
@@ -275,20 +314,18 @@ const Header = () => {
           <ResponsiveHeaderNaviIconBottom isActive={isActive} />
         </ResponsiveHeaderNaviIconWrapper>
       </HeaderWrap>
-      <ResponsiveNaviWrapper isActive={isActive}>
-        <ResponsiveNaviFirst onClick={clickLessonLink} isActive={isActive}>
-          LESSON
-        </ResponsiveNaviFirst>
-        <ResponsiveNaviSecond onClick={clickTeamLink} isActive={isActive}>
-          TEAM
-        </ResponsiveNaviSecond>
-        <ResponsiveNaviThird onClick={clickStudioLink} isActive={isActive}>
-          STUDIO
-        </ResponsiveNaviThird>
-        <ResponsiveNaviFourth onClick={clickContactLink} isActive={isActive}>
-          CONTACT
-        </ResponsiveNaviFourth>
-      </ResponsiveNaviWrapper>
+      <ResponsiveNaviFirst onClick={clickLessonLink} isActive={isActive}>
+        LESSON
+      </ResponsiveNaviFirst>
+      <ResponsiveNaviSecond onClick={clickTeamLink} isActive={isActive}>
+        TEAM
+      </ResponsiveNaviSecond>
+      <ResponsiveNaviThird onClick={clickStudioLink} isActive={isActive}>
+        STUDIO
+      </ResponsiveNaviThird>
+      <ResponsiveNaviFourth onClick={clickContactLink} isActive={isActive}>
+        CONTACT
+      </ResponsiveNaviFourth>
     </>
   );
 };
