@@ -120,14 +120,14 @@ const ResponsiveNaviWrapper = styled.ul`
   top: 100px;
   width: 100%;
   height: 100%;
-  z-index: 999;
   height: -webkit-calc(100% - 100px); /*Chrome19~25対応*/
   height: -moz-calc(100% - 100px); /*Firefox4~15対応*/
   height: calc(100% - 100px);
   color: white;
   font-size: 22px;
-  ${(props) =>
-    props.isActive ? "display: flex;flex-direction: column;" : "display: none"}
+  display: flex;
+  flex-direction: column;
+  ${(props) => (props.isActive ? "z-index: 999;;" : "z-index: -1;")}
 `;
 
 const ResponsiveNaviFirst = styled.li`
