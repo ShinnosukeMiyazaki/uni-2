@@ -19,6 +19,7 @@ const ContactItem = styled.input`
   width: 100%;
   font-size: 1.6rem;
   margin-top: 15px;
+  box-sizing: border-box;
 `;
 
 const MessageArea = styled.textarea`
@@ -29,6 +30,7 @@ const MessageArea = styled.textarea`
   margin-top: 15px;
   resize: none;
   height: 300px;
+  box-sizing: border-box;
 `;
 
 const Button = styled.button`

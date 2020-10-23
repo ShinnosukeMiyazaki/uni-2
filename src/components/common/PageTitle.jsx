@@ -8,6 +8,9 @@ const Title = styled.h1`
   width: 100%;
   text-align: center;
   letter-spacing: 3px;
+  @media (max-width: 600px) {
+    font-size: 30px;
+  }
 `;
 
 const PageTitle = (props) => {

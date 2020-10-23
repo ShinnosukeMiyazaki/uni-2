@@ -27,6 +27,9 @@ const AllocationCell = styled.th`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 450px) {
+    font-size: 14px;
+  }
 `;
 const TableShortContainer = styled.table`
   width: 50%;
@@ -52,6 +55,9 @@ const AllocationLongCell = styled.th`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 450px) {
+    font-size: 14px;
+  }
 `;
 
 const Lesson = () => {
