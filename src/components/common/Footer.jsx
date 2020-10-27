@@ -8,7 +8,6 @@ const FooterContainer = styled.footer`
   display: flex;
   justify-content: center;
   padding: 40px 0;
-  /*background-color: #2c3e50;*/
   margin-top: auto;
 `;
 
