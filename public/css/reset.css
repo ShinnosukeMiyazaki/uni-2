@@ -142,13 +142,12 @@ a {
 *    
 */
 
-body,
-html {
+body {
   padding-top: 75px;
+  padding-bottom: 80px;
   position: relative;
   min-height: 100vh;
   background-color: #fff;
-  padding-bottom: 120px;
   color: #2c3e50;
   font-family: "Lato", sans-serif;
 }
