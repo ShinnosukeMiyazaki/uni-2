@@ -17,7 +17,6 @@ const StudioImage = styled.img`
   object-fit: cover;
   transition: 2.5s;
   opacity: ${(props) => (props.opacity ? 1 : 0)};
-  border-radius: 8px;
   position: absolute;
 `;
 
@@ -86,7 +85,7 @@ const Studio = () => {
       </SectionWrapper>
       <SectionWrapper>
         <SubTitle>代表</SubTitle>
-        <p>高畑 久美子</p>
+        <p>高畑 久見子</p>
       </SectionWrapper>
     </>
   );

@@ -20,6 +20,17 @@ const PomdollLogo = styled.div`
   background-image: url(${PomLogo});
   background-size: contain;
   background-repeat: no-repeat;
+  position: relative;
+  &::before {
+    content: "ポムドール";
+    letter-spacing: 8px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
 `;
 
 const PomdollTextContainer = styled.div`
@@ -44,7 +55,6 @@ const PomdollImage = styled.img`
   object-fit: cover;
   transition: 2.5s;
   opacity: ${(props) => (props.opacity ? 1 : 0)};
-  border-radius: 8px;
   position: absolute;
   @media (max-width: 600px) {
     width: 100%;
@@ -96,12 +106,12 @@ const Team = () => {
       <Title title="TEAM"></Title>
       <PomdollLogo />
       <PomdollTextContainer>
+        <p>2016年より石川県内にて活動スタート。</p>
+        <p>4才〜小中学生のGirlsを対象にしたキッズチアダンス チームです。</p>
         <p>
-          Pomdollは、2016年より石川県にて活動をスタートした4才~小学生のGirlsを対象にしたキッズチアダンスチームです。
-        </p>
-        <p>
-          エンターテイメント性の高い魅せるダンスを目指してレッスンしています。
-          踊っている本人だけではなく、Pomdollのダンスを見ていただいた方々も楽しい気持ちや元気を届けられるようなそんなパワーの溢れるチームを目指しています。
+          エンターテイメント性の高い“魅せるダンス”を目指して
+          レッスンをしています。踊っている本人だけではなく、Pomdollのダンスを見ていただいた方々も楽しい気持ちや元気を届けられる様な
+          そんなパワーの溢れるチームを目指しています。
         </p>
       </PomdollTextContainer>
       <PomdollImageContainer>

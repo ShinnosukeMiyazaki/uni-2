@@ -19,12 +19,13 @@ const TimetableCell = styled.th`
 `;
 const AllocationCell = styled.th`
   width: 25%;
-  font-size: 18px;
+  font-size: 16px;
   padding: 15px 0;
   text-align: center;
   border-right: 2px solid #34495e;
   border-bottom: 2px solid #34495e;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   @media (max-width: 450px) {
@@ -47,7 +48,7 @@ const TimetableLongCell = styled.th`
 `;
 const AllocationLongCell = styled.th`
   width: 50%;
-  font-size: 18px;
+  font-size: 16px;
   padding: 15px 0;
   text-align: center;
   border-right: 2px solid #34495e;
@@ -55,6 +56,7 @@ const AllocationLongCell = styled.th`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   @media (max-width: 450px) {
     font-size: 14px;
   }
@@ -79,7 +81,7 @@ const Lesson = () => {
           </TimetableCell>
           <AllocationCell>Commin soon...</AllocationCell>
           <AllocationCell>
-            L1
+            <span style={{ fontSize: "22px" }}> L1</span>
             <br />
             年中~年長
           </AllocationCell>
@@ -92,17 +94,17 @@ const Lesson = () => {
             18:30
           </TimetableCell>
           <AllocationCell>
-            Jr.E
+            <span style={{ fontSize: "22px" }}>Jr.E</span>
             <br />
             小1~小3
           </AllocationCell>
           <AllocationCell>
-            Jr.D
+            <span style={{ fontSize: "22px" }}>Jr.D</span>
             <br />
             小1~小3
           </AllocationCell>
           <AllocationCell style={{ borderRight: "none" }}>
-            Jr.C
+            <span style={{ fontSize: "22px" }}>Jr.C</span>
             <br />
             小1~小3
           </AllocationCell>
@@ -115,12 +117,12 @@ const Lesson = () => {
           </TimetableCell>
           <AllocationCell></AllocationCell>
           <AllocationCell>
-            Jr.B
+            <span style={{ fontSize: "22px" }}>Jr.B</span>
             <br />
             小4~小6
           </AllocationCell>
           <AllocationCell style={{ borderRight: "none" }}>
-            Jr.A
+            <span style={{ fontSize: "22px" }}>Jr.A</span>
             <br />
             小4~小6
           </AllocationCell>
@@ -134,7 +136,7 @@ const Lesson = () => {
           <AllocationCell style={{ borderBottom: "none" }}></AllocationCell>
           <AllocationCell style={{ borderBottom: "none" }}></AllocationCell>
           <AllocationCell style={{ borderRight: "none", borderBottom: "none" }}>
-            Teen's
+            <span style={{ fontSize: "22px" }}>Teen's</span>
             <br />
             中学生以上
           </AllocationCell>
@@ -152,7 +154,7 @@ const Lesson = () => {
             19:30
           </TimetableLongCell>
           <AllocationLongCell style={{ borderRight: "none" }}>
-            基礎
+            <span style={{ fontSize: "22px" }}>基礎</span>
             <br />
             小学生以上
           </AllocationLongCell>
@@ -166,7 +168,7 @@ const Lesson = () => {
           <AllocationLongCell
             style={{ borderRight: "none", borderBottom: "none" }}
           >
-            S
+            <span style={{ fontSize: "22px" }}>S</span>
           </AllocationLongCell>
         </tr>
       </TableShortContainer>

@@ -263,9 +263,9 @@ const Header = () => {
                 alignItems: "center",
                 padding: "0 30px",
               }}
-              to="/lesson"
+              to="/team"
             >
-              LESSON
+              TEAM
             </Link>
           </NavItem>
           <NavItem>
@@ -276,9 +276,9 @@ const Header = () => {
                 alignItems: "center",
                 padding: "0 30px",
               }}
-              to="/team"
+              to="/lesson"
             >
-              TEAM
+              LESSON
             </Link>
           </NavItem>
           <NavItem>
@@ -314,11 +314,11 @@ const Header = () => {
           <ResponsiveHeaderNaviIconBottom isActive={isActive} />
         </ResponsiveHeaderNaviIconWrapper>
       </HeaderWrap>
-      <ResponsiveNaviFirst onClick={clickLessonLink} isActive={isActive}>
-        LESSON
-      </ResponsiveNaviFirst>
-      <ResponsiveNaviSecond onClick={clickTeamLink} isActive={isActive}>
+      <ResponsiveNaviFirst onClick={clickTeamLink} isActive={isActive}>
         TEAM
+      </ResponsiveNaviFirst>
+      <ResponsiveNaviSecond onClick={clickLessonLink} isActive={isActive}>
+        LESSON
       </ResponsiveNaviSecond>
       <ResponsiveNaviThird onClick={clickStudioLink} isActive={isActive}>
         STUDIO
