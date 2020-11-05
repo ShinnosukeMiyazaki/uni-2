@@ -1,1 +1,4 @@
 /* /index.html 200
+http://cds-uni.com/*  https://cds-uni.com/:splat  301!
+https://cds-uni.com/*  https://cds-uni.com/:splat  301!
+http://cds-uni.com/*  https://cds-uni.com/:splat  301!
