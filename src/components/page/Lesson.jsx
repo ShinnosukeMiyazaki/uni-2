@@ -17,7 +17,7 @@ const TimetableCell = styled.th`
   border-right: 2px solid #34495e;
   background-color: #34495e;
   color: white;
-  flex:1;
+  flex: 1;
   @media (max-width: 600px) {
     font-size: 12px;
   }
@@ -32,69 +32,74 @@ const AllocationCell = styled.th`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex:1;
+  flex: 1;
   @media (max-width: 600px) {
     font-size: 10px;
   }
 `;
 const TimetableCourseName = styled.h4`
-font-size:22px;
-@media (max-width: 600px) {
-  font-size: 16px;
-}
+  font-size: 22px;
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
 `;
 
 const BeginnerMarck = styled.img`
-height: 16px;
-display: inline-block;
-transform: translateY(15%);
-@media (max-width: 600px) {
+  height: 16px;
+  display: inline-block;
+  transform: translateY(15%);
+  @media (max-width: 600px) {
     height: 10px;
   }
 `;
 
 const LessonExplanationContainer = styled.section`
-font-size: 12px;
-letter-spacing: 1px;
-line-height: 2;
-margin-bottom: 120px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 2;
+  margin-bottom: 120px;
 `;
 
 const PriceNotationContainer = styled.ul`
-text-align: center;
-font-weight: bold;
-flex: 1;
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
+  flex: 1;
 `;
 
 const PriceNotationItem = styled.li`
-font-size: 42px;
-margin-bottom: 50px;
+  font-size: 28px;
+  margin-bottom: 50px;
+  text-align: center;
+  @media (max-width: 475px) {
+    font-size: 20px;
+  }
 `;
 
 const CourseTableContainer = styled.table`
-width: 100%;
+  width: 100%;
 `;
 
 const CourseCellTop = styled.th`
-font-size:20px;
-font-weight: bold;
-padding: 8px 20px;
-flex:1;
-@media (max-width: 770px) {
-  font-size:16px;
-  padding: 8px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px 20px;
+  flex: 1;
+  @media (max-width: 770px) {
+    font-size: 14px;
+    padding: 8px 10px;
   }
 `;
 
 const CourseCell = styled.th`
-font-size:18px;
-font-weight: bold;
-padding: 8px 20px;
-text-align: center;
-flex:1;
-@media (max-width: 770px) {
-  font-size:16px;
-  padding: 8px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 20px;
+  text-align: center;
+  flex: 1;
+  @media (max-width: 770px) {
+    font-size: 14px;
+    padding: 8px 10px;
   }
 `;
 
@@ -103,7 +108,7 @@ const Lesson = () => {
     <React.Fragment>
       <Title title="LESSON SCHEDULE"></Title>
       <TableContainer>
-      <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+        <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
           <TimetableCell></TimetableCell>
           <TimetableCell>TUE</TimetableCell>
           <TimetableCell>WED</TimetableCell>
@@ -135,9 +140,11 @@ const Lesson = () => {
           </TimetableCell>
           <AllocationCell>
             <TimetableCourseName>Jr.E</TimetableCourseName>
-            <br/>
-            <p><BeginnerMarck src={Logo} />
-            小1~小3</p>
+            <br />
+            <p>
+              <BeginnerMarck src={Logo} />
+              小1~小3
+            </p>
           </AllocationCell>
           <AllocationCell>
             <TimetableCourseName>Jr.D</TimetableCourseName>
@@ -164,7 +171,7 @@ const Lesson = () => {
             <br />
             小4~小6
           </AllocationCell>
-          <AllocationCell >
+          <AllocationCell>
             <TimetableCourseName>Jr.A</TimetableCourseName>
             <br />
             小4~小6
@@ -188,7 +195,7 @@ const Lesson = () => {
           </TimetableCell>
           <AllocationCell style={{ borderBottom: "none" }}></AllocationCell>
           <AllocationCell style={{ borderBottom: "none" }}></AllocationCell>
-          <AllocationCell style={{borderBottom: "none" }}>
+          <AllocationCell style={{ borderBottom: "none" }}>
             <TimetableCourseName>Teen's</TimetableCourseName>
             <br />
             中学生以上
@@ -198,75 +205,151 @@ const Lesson = () => {
             <br />|<br />
             20:30
           </TimetableCell>
-          <AllocationCell
-            style={{ borderRight: "none", borderBottom: "none" }}
-          >
+          <AllocationCell style={{ borderRight: "none", borderBottom: "none" }}>
             <TimetableCourseName>S</TimetableCourseName>
           </AllocationCell>
         </tr>
       </TableContainer>
       <LessonExplanationContainer>
         <p>※タイムテーブルは年度毎に変更していく可能性があります。</p>
-        <p>※<img src={Logo} style={{height: "12px", transform:"translateY(15%)"}}></img>マーク・・・ダンス歴１年未満の方対象ビギナークラス</p>
+        <p>
+          ※
+          <img
+            src={Logo}
+            style={{ height: "12px", transform: "translateY(15%)" }}
+          ></img>
+          マーク・・・ダンス歴１年未満の方対象ビギナークラス
+        </p>
         <p>※木曜日クラス (A・C) ・・・受講歴２年以上のアドバンスクラス</p>
-        <p>※Sクラス・・・小学４年生以上の選抜クラス (オーデション合格者のみ受講可) </p>
+        <p>
+          ※Sクラス・・・小学４年生以上の選抜クラス
+          (オーデション合格者のみ受講可){" "}
+        </p>
       </LessonExplanationContainer>
       <Title title="COURSE"></Title>
       <PriceNotationContainer>
         <PriceNotationItem>
-          <p style={{fontSize: "18px"}} >入会金</p>
+          <p style={{ fontSize: "16px" }}>入会金</p>
           ¥1,000円
         </PriceNotationItem>
         <PriceNotationItem>
-          <p style={{fontSize: "18px"}} >年会費</p>
+          <p style={{ fontSize: "16px" }}>年会費</p>
           ¥1,200円
         </PriceNotationItem>
         <PriceNotationItem>
-          <p style={{fontSize: "18px"}} >事務手数料</p>
+          <p style={{ fontSize: "16px" }}>事務手数料</p>
           ¥2,000円
         </PriceNotationItem>
       </PriceNotationContainer>
       <CourseTableContainer>
-      <tr style={{ width: "100%", display: "flex", flexWrap: "wrap"}}>
-        <CourseCellTop style={{flex: 3}}>受講コース</CourseCellTop>
-        <CourseCellTop>受講料</CourseCellTop>
-        <CourseCellTop>年払い受講料</CourseCellTop>
-      </tr>
-      <tr style={{ width: "100%", display: "flex", flexWrap: "wrap",padding: "15px" , borderTop: "2px solid #2c3e50"}}>
-        <CourseCell style={{flex: 3}}>月4回 チアクラス (50分) コース</CourseCell>
-        <CourseCell>¥5,000</CourseCell>
-        <CourseCell>¥58,750</CourseCell>
-      </tr>
-      <tr style={{ width: "100%", display: "flex", flexWrap: "wrap",padding: "15px"}}>
-        <CourseCell style={{flex: 3}}>月4回 基礎クラス (60分) コース</CourseCell>
-        <CourseCell>¥5,500</CourseCell>
-        <CourseCell>¥64,625</CourseCell>
-      </tr>
-      <tr style={{ width: "100%", display: "flex", flexWrap: "wrap",padding: "15px"}}>
-        <CourseCell style={{flex: 3}}>月8回 (チア+基礎) コース</CourseCell>
-        <CourseCell>¥10,000</CourseCell>
-        <CourseCell>¥118,750</CourseCell>
-      </tr>
-      <tr style={{ width: "100%", display: "flex", flexWrap: "wrap",padding: "15px"}}>
-        <CourseCell style={{flex: 3}}>月4回 Teen'sクラス ※中学生以上</CourseCell>
-        <CourseCell>¥5,500</CourseCell>
-        <CourseCell>¥64,625</CourseCell>
-      </tr>
-      <tr style={{ width: "100%", display: "flex", flexWrap: "wrap",padding: "15px"}}>
-        <CourseCell style={{flex: 3}}>月8回 (Teen's+基礎) コース</CourseCell>
-        <CourseCell>¥10,500</CourseCell>
-        <CourseCell>¥124,625</CourseCell>
-      </tr>
-      <tr style={{ width: "100%", display: "flex", flexWrap: "wrap",padding: "15px"}}>
-        <CourseCell style={{flex: 3}}>Sクラス ※オーディション合格者のみ受講可</CourseCell>
-        <CourseCell>¥7,00</CourseCell>
-        <CourseCell>¥82,250</CourseCell>
-      </tr>
-      <tr style={{ width: "100%", display: "flex", flexWrap: "wrap",padding: "15px", borderBottom: "2px solid #2c3e50"}}>
-        <CourseCell style={{flex: 3}}>Sクラス+基礎 コース</CourseCell>
-        <CourseCell>¥12,000</CourseCell>
-        <CourseCell>¥142,438</CourseCell>
-      </tr>
+        <tr
+          style={{
+            width: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+            padding: "15px 0px",
+          }}
+        >
+          <CourseCellTop style={{ flex: 3 }}>受講コース</CourseCellTop>
+          <CourseCellTop>受講料</CourseCellTop>
+          <CourseCellTop>年払い受講料</CourseCellTop>
+        </tr>
+        <tr
+          style={{
+            width: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+            padding: "15px 0px",
+            borderTop: "2px solid #2c3e50",
+          }}
+        >
+          <CourseCell style={{ flex: 3 }}>
+            月4回 チアクラス (50分) コース
+          </CourseCell>
+          <CourseCell>¥5,000</CourseCell>
+          <CourseCell>¥58,750</CourseCell>
+        </tr>
+        <tr
+          style={{
+            width: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+            padding: "15px 0px",
+          }}
+        >
+          <CourseCell style={{ flex: 3 }}>
+            月4回 基礎クラス (60分) コース
+          </CourseCell>
+          <CourseCell>¥5,500</CourseCell>
+          <CourseCell>¥64,625</CourseCell>
+        </tr>
+        <tr
+          style={{
+            width: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+            padding: "15px 0px",
+          }}
+        >
+          <CourseCell style={{ flex: 3 }}>月8回 (チア+基礎) コース</CourseCell>
+          <CourseCell>¥10,000</CourseCell>
+          <CourseCell>¥118,750</CourseCell>
+        </tr>
+        <tr
+          style={{
+            width: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+            padding: "15px 0px",
+          }}
+        >
+          <CourseCell style={{ flex: 3 }}>
+            月4回 Teen'sクラス ※中学生以上
+          </CourseCell>
+          <CourseCell>¥5,500</CourseCell>
+          <CourseCell>¥64,625</CourseCell>
+        </tr>
+        <tr
+          style={{
+            width: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+            padding: "15px 0px",
+          }}
+        >
+          <CourseCell style={{ flex: 3 }}>
+            月8回 (Teen's+基礎) コース
+          </CourseCell>
+          <CourseCell>¥10,500</CourseCell>
+          <CourseCell>¥124,625</CourseCell>
+        </tr>
+        <tr
+          style={{
+            width: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+            padding: "15px 0px",
+          }}
+        >
+          <CourseCell style={{ flex: 3 }}>
+            Sクラス ※オーディション合格者のみ受講可
+          </CourseCell>
+          <CourseCell>¥7,000</CourseCell>
+          <CourseCell>¥82,250</CourseCell>
+        </tr>
+        <tr
+          style={{
+            width: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+            padding: "15px 0px",
+            borderBottom: "2px solid #2c3e50",
+          }}
+        >
+          <CourseCell style={{ flex: 3 }}>Sクラス+基礎 コース</CourseCell>
+          <CourseCell>¥12,000</CourseCell>
+          <CourseCell>¥142,438</CourseCell>
+        </tr>
       </CourseTableContainer>
       <LessonExplanationContainer>
         <p>※価格は全て税込価格になります。</p>
