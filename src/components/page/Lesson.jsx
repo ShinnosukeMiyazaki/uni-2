@@ -217,6 +217,7 @@ const Lesson = () => {
           <img
             src={Logo}
             style={{ height: "12px", transform: "translateY(15%)" }}
+            alt="初心者マーク"
           ></img>
           マーク・・・ダンス歴１年未満の方対象ビギナークラス
         </p>
