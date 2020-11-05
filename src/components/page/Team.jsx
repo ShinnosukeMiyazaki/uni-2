@@ -116,9 +116,21 @@ const Team = () => {
       </PomdollTextContainer>
       <PomdollImageContainer>
         {/*<Smp />*/}
-        <PomdollImage opacity={pom1Opacity} src={PomImg1} />
-        <PomdollImage opacity={pom2Opacity} src={PomImg2} />
-        <PomdollImage opacity={pom3Opacity} src={PomImg3} />
+        <PomdollImage
+          alt="Pomdollの画像1"
+          opacity={pom1Opacity}
+          src={PomImg1}
+        />
+        <PomdollImage
+          alt="Pomdollの画像2"
+          opacity={pom2Opacity}
+          src={PomImg2}
+        />
+        <PomdollImage
+          alt="Pomdollの画像3"
+          opacity={pom3Opacity}
+          src={PomImg3}
+        />
       </PomdollImageContainer>
       <Title title="PERFORMANCE"></Title>
       <ul>

@@ -65,11 +65,13 @@ const Studio = () => {
           decoding="async"
           src={StudioImg1}
           opacity={studio1Opacity}
+          alt="スタジオの画像１"
         />
         <StudioImage
           decoding="async"
           src={StudioImg2}
           opacity={studio2Opacity}
+          alt="スタジオの画像2"
         />
       </StudioImageContainer>
       <SectionWrapper>
