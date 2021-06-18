@@ -111,18 +111,20 @@ const Lesson = () => {
         <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
           <TimetableCell></TimetableCell>
           <TimetableCell>TUE</TimetableCell>
+          <TimetableCell></TimetableCell>
           <TimetableCell>WED</TimetableCell>
           <TimetableCell>THU</TimetableCell>
           <TimetableCell></TimetableCell>
           <TimetableCell>FRI</TimetableCell>
         </tr>
         <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+          <TimetableCell></TimetableCell>
+          <AllocationCell></AllocationCell>
           <TimetableCell>
             16:00
             <br />|<br />
             17:20
           </TimetableCell>
-          <AllocationCell>Commin soon...</AllocationCell>
           <AllocationCell>
             <TimetableCourseName> L1</TimetableCourseName>
             <br />
@@ -146,6 +148,11 @@ const Lesson = () => {
               小1~小3
             </p>
           </AllocationCell>
+          <TimetableCell>
+            17:40
+            <br />|<br />
+            18:30
+          </TimetableCell>
           <AllocationCell>
             <TimetableCourseName>Jr.D</TimetableCourseName>
             <br />
@@ -163,9 +170,18 @@ const Lesson = () => {
           <TimetableCell>
             18:50
             <br />|<br />
+            19:50
+          </TimetableCell>
+          <AllocationCell>
+            <TimetableCourseName>基礎</TimetableCourseName>
+            <br />
+            小学生以上
+          </AllocationCell>
+          <TimetableCell>
+            18:50
+            <br />|<br />
             19:40
           </TimetableCell>
-          <AllocationCell></AllocationCell>
           <AllocationCell>
             <TimetableCourseName>Jr.B</TimetableCourseName>
             <br />
@@ -188,12 +204,13 @@ const Lesson = () => {
           </AllocationCell>
         </tr>
         <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+          <TimetableCell style={{ borderBottom: "none" }}></TimetableCell>
+          <AllocationCell style={{ borderBottom: "none" }}></AllocationCell>
           <TimetableCell style={{ borderBottom: "none" }}>
             20:00
             <br />|<br />
             21:00
           </TimetableCell>
-          <AllocationCell style={{ borderBottom: "none" }}></AllocationCell>
           <AllocationCell style={{ borderBottom: "none" }}></AllocationCell>
           <AllocationCell style={{ borderBottom: "none" }}>
             <TimetableCourseName>Teen's</TimetableCourseName>
