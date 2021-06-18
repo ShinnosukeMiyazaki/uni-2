@@ -10,6 +10,18 @@ const TableContainer = styled.table`
   border: 2px solid #34495e;
   margin-bottom: 10px;
 `;
+const WeekTimetableCell = styled.th`
+  font-size: 18px;
+  padding: 15px 0;
+  text-align: center;
+  border-right: 2px solid #34495e;
+  background-color: #34495e;
+  color: white;
+  flex: 1;
+  @media (max-width: 600px) {
+    font-size: 10px;
+  }
+`;
 const TimetableCell = styled.th`
   font-size: 18px;
   padding: 15px 0;
@@ -19,7 +31,8 @@ const TimetableCell = styled.th`
   color: white;
   flex: 1;
   @media (max-width: 600px) {
-    font-size: 12px;
+    font-size: 10px;
+    max-width: 32px;
   }
 `;
 const AllocationCell = styled.th`
@@ -110,12 +123,12 @@ const Lesson = () => {
       <TableContainer>
         <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
           <TimetableCell></TimetableCell>
-          <TimetableCell>TUE</TimetableCell>
+          <WeekTimetableCell>TUE</WeekTimetableCell>
           <TimetableCell></TimetableCell>
-          <TimetableCell>WED</TimetableCell>
-          <TimetableCell>THU</TimetableCell>
+          <WeekTimetableCell>WED</WeekTimetableCell>
+          <WeekTimetableCell>THU</WeekTimetableCell>
           <TimetableCell></TimetableCell>
-          <TimetableCell>FRI</TimetableCell>
+          <WeekTimetableCell>FRI</WeekTimetableCell>
         </tr>
         <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
           <TimetableCell></TimetableCell>
