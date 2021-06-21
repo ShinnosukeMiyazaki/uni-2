@@ -134,7 +134,7 @@ const Lesson = () => {
           <TimetableCell></TimetableCell>
           <AllocationCell></AllocationCell>
           <TimetableCell>
-            16:00
+            16:30
             <br />|<br />
             17:20
           </TimetableCell>
@@ -208,7 +208,7 @@ const Lesson = () => {
           <TimetableCell>
             18:20
             <br />|<br />
-            19:30
+            19:20
           </TimetableCell>
           <AllocationCell style={{ borderRight: "none" }}>
             <TimetableCourseName>基礎</TimetableCourseName>
@@ -233,7 +233,7 @@ const Lesson = () => {
           <TimetableCell style={{ borderBottom: "none" }}>
             19:30
             <br />|<br />
-            20:30
+            20:45
           </TimetableCell>
           <AllocationCell style={{ borderRight: "none", borderBottom: "none" }}>
             <TimetableCourseName>S</TimetableCourseName>
