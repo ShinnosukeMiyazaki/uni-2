@@ -74,115 +74,34 @@ const InfoMail = styled.a`
   }
 `;
 
+const BodyContainer = styled.div`
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  opacity: ${({ load }) => (load ? 1 : 0)};
+  transition: all 1.4s;
+`;
+
 const Contact = () => {
-  /*const history = useHistory();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  };
-
-  Here’s the juicy bit for posting the form submission 
-
-  const handleSubmit = (e) => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": "contact",
-        name: name,
-        email: email,
-        message: message,
-      }),
-    })
-      .then(() => history.push("/thanks") console.log("やあ"))
-      .catch((error) => alert(error));
-
-    e.preventDefault();
-  };
-
-  const nameHandleChange = (e) => setName(e.target.value);
-  const emailHandleChange = (e) => setEmail(e.target.value);
-  const messageHandleChange = (e) => setMessage(e.target.value);*/
+  const [load, setLoad] = useState(false);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      setLoad(true);
+    }, 300);
+  }, []);
   return (
-    <Container>
-      <Title title="CONTACT" />
-      <Message>
-        お問い合わせの方は以下のメールアドレスまでご連絡ください。
-      </Message>
-      <Message> クリックするとメールが立ち上がります。</Message>
-      <InfoMail href="mailto:info@cds-uni.com">info@cds-uni.com</InfoMail>
-
-      {/* <form
-        name="contact"
-        method="POST"
-        action="/thanks"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="bot-field" />
-        <input type="hidden" name="form-name" value="contact" />
-        <ContactItemWrapper>
-          <li style={{ width: "45%", marginBottom: "20px" }}>
-            <Label htmlFor="name">NAME</Label>
-            <ContactItem placeholder="Your Name" id="name" name="name" />
-          </li>
-          <li style={{ width: "45%", marginBottom: "20px" }}>
-            <Label htmlFor="email">MAIL</Label>
-            <ContactItem
-              placeholder="Email Address"
-              id="email"
-              type="email"
-              name="email"
-            />
-          </li>
-          <li style={{ width: "100%", marginBottom: "20px" }}>
-            <Label htmlFor="message">MESSAGE</Label>
-            <MessageArea
-              placeholder="Put message here"
-              id="message"
-              row="4"
-              name="message"
-            />
-          </li>
-          <Button type="submit">Send Message</Button>
-        </ContactItemWrapper> */}
-      {/*
-        <p>
-          <label>
-            Your Name: <input type="text" name="name" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Email: <input type="email" name="email" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Role:{" "}
-            <select name="role[]" multiple>
-              <option value="leader">Leader</option>
-              <option value="follower">Follower</option>
-            </select>
-          </label>
-        </p>
-        <p>
-          <label>
-            Message: <textarea name="message"></textarea>
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>*/}
-      {/* </form> */}
-    </Container>
+    <BodyContainer load={load}>
+      <Container>
+        <Title title="CONTACT" />
+        <Message>
+          お問い合わせの方は以下のメールアドレスまでご連絡ください。
+        </Message>
+        <Message> クリックするとメールが立ち上がります。</Message>
+        <InfoMail href="mailto:info@cds-uni.com">info@cds-uni.com</InfoMail>
+      </Container>
+    </BodyContainer>
   );
 };
 

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import UniLogo from "../../../assets/images/TopLogo.png";
-import PomLogo from "../../../assets/images/pomdolllogo.png";
+import PomLogo from "../../../assets/images/S__18464797.png";
 
 const Container = styled.div`
   width: 100%;
@@ -12,11 +12,12 @@ const Container = styled.div`
 `;
 
 const BigLogo = styled.div`
-  width: 70%;
+  width: 100%;
   height: 700px;
   background-image: url(${UniLogo});
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   @media (max-width: 800px) {
     width: 70%;
     height: 620px;
@@ -50,37 +51,32 @@ const PomdollLogo = styled.div`
   background-repeat: no-repeat;
 `;
 
-const PomdollTextContainer = styled.div`
+const BodyContainer = styled.div`
+  max-width: 1080px;
   width: 100%;
-  margin-top: 30px;
-  padding: 30px 5px;
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bolder;
-  line-height: 28px;
+  margin: 0 auto;
+  padding: 0 15px;
+  opacity: ${({ load }) => (load ? 1 : 0)};
+  transition: all 1.4s;
 `;
 
 const App = () => {
+  const [load, setLoad] = useState(false);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      setLoad(true);
+    }, 300);
+  }, []);
   return (
-    <Container>
-      <BigLogo />
-      <PomdollContainer>
-        <PomdollLogo />
-        {/*<PomdollTextContainer>
-          <p>
-            Pomdollは、2016年より石川県内で活動をスタートした、
-            年中〜小・中学生のGirlsを対象にしたキッズチアダンスチームです。
-          </p>
-          <p>
-            エンターテイメント性の高い“魅せるダンス”を目指してレッスンをしています。
-          </p>
-          <p>
-            踊っている本人だけではなく、Pomdollのダンスを見ていただいた方々に
-            楽しい気持ちや元気を届けられる様なそんなパワー溢れるチームを目指しています。
-          </p>
-        </PomdollTextContainer>*/}
-      </PomdollContainer>
-    </Container>
+    <BodyContainer load={load}>
+      <Container>
+        <BigLogo />
+        <PomdollContainer>
+          <PomdollLogo />
+        </PomdollContainer>
+      </Container>
+    </BodyContainer>
   );
 };
 

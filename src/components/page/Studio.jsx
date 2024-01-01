@@ -7,7 +7,7 @@ import StudioImg2 from "../../../assets/images/uni-studio2.png";
 
 const StudioImageContainer = styled.div`
   margin-bottom: 80px;
-  height: 400px;
+  height: 500px;
   position: relative;
 `;
 
@@ -36,6 +36,15 @@ const SubTitle = styled.h4`
   letter-spacing: 3px;
 `;
 
+const BodyContainer = styled.div`
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  opacity: ${({ load }) => (load ? 1 : 0)};
+  transition: all 1.4s;
+`;
+
 const Studio = () => {
   const [studio1Opacity, setStudio1Opacity] = useState(true);
   const [studio2Opacity, setStudio2Opacity] = useState(false);
@@ -57,8 +66,17 @@ const Studio = () => {
       counter === imgNumber ? (counter = 1) : (counter = counter + 1);
     }, 3000);
   }, []);
+
+  const [load, setLoad] = useState(false);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      setLoad(true);
+    }, 300);
+  }, []);
+
   return (
-    <>
+    <BodyContainer load={load}>
       <Title title="STUDIO"></Title>
       <StudioImageContainer>
         <StudioImage
@@ -102,7 +120,7 @@ const Studio = () => {
         <SubTitle>代表</SubTitle>
         <p>高畑 久見子</p>
       </SectionWrapper>
-    </>
+    </BodyContainer>
   );
 };
 
