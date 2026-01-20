@@ -258,9 +258,8 @@ const Team = () => {
           <PomdollPerformance>かがやきフェス2023出演</PomdollPerformance>
           <PomdollPerformance>石川演芸文化祭出演</PomdollPerformance>
           <PomdollPerformance>
-            <PomdollPerformanceStrong>
-              ラグビースペシャルマッチ
-            </PomdollPerformanceStrong>
+            ラグビースペシャルマッチ
+            <br />
             ALL早稲田大学VSALL慶應義塾大学
             <br />
             オープニングパフォーマンス

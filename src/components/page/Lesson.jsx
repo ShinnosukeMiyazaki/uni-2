@@ -3,8 +3,6 @@ import styled from "styled-components";
 
 import Title from "../common/PageTitle.jsx";
 
-import Logo from "../../../assets/images/7135.png";
-
 const TableContainer = styled.table`
   width: 100%;
   border: 2px solid #34495e;
@@ -54,15 +52,6 @@ const TimetableCourseName = styled.h4`
   font-size: 22px;
   @media (max-width: 600px) {
     font-size: 16px;
-  }
-`;
-const BeginnerMarck = styled.img`
-  height: 16px;
-  display: inline-block;
-  transform: translateY(15%);
-  margin-right: 5px;
-  @media (max-width: 600px) {
-    height: 10px;
   }
 `;
 
@@ -126,157 +115,254 @@ const BodyContainer = styled.div`
 
 const Lesson = () => {
   const [load, setLoad] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    setTimeout(() => {
-      setLoad(true);
-    }, 300);
+    setTimeout(() => setLoad(true), 300);
   }, []);
+
   return (
     <BodyContainer load={load}>
-      <Title title="LESSON SCHEDULE"></Title>
+      <Title title="LESSON SCHEDULE" />
+
+      {/* ===== Timetable (画像内容に合わせて更新) ===== */}
       <TableContainer>
+        {/* header */}
         <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
-          <TimetableCell></TimetableCell>
+          <TimetableCell />
+          <WeekTimetableCell>MON</WeekTimetableCell>
           <WeekTimetableCell>TUE</WeekTimetableCell>
-          <TimetableCell></TimetableCell>
+          <TimetableCell />
           <WeekTimetableCell>WED</WeekTimetableCell>
+          <TimetableCell />
           <WeekTimetableCell>THU</WeekTimetableCell>
-          <TimetableCell></TimetableCell>
+          <TimetableCell />
           <WeekTimetableCell>FRI</WeekTimetableCell>
         </tr>
+
+        {/* Row: 16:30-17:20 / (Fri 16:20-17:10) */}
         <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
           <TimetableCell>
             16:30
             <br />|<br />
             17:20
           </TimetableCell>
+
+          {/* MON */}
+          <AllocationCell />
+          {/* TUE */}
           <AllocationCell>
-            <TimetableCourseName>L</TimetableCourseName>
-            <br />
-            <p>年中~年長</p>
-            <p>定員15</p>
+            <TimetableCourseName>L1</TimetableCourseName>
+            <p>年中〜年長</p>
+            <p>KUMIIKO</p>
           </AllocationCell>
+
+          {/* time col (for WED) */}
+          <TimetableCell />
+          {/* WED */}
+          <AllocationCell />
+
+          {/* time col (for THU) */}
+          <TimetableCell />
+          {/* THU */}
+          <AllocationCell />
+
+          {/* time col (for FRI) */}
+          <TimetableCell>
+            16:20
+            <br />|<br />
+            17:10
+          </TimetableCell>
+          {/* FRI */}
+          <AllocationCell style={{ borderRight: "none" }}>
+            <TimetableCourseName>L2</TimetableCourseName>
+            <p>年中〜年長</p>
+            <p>MAI</p>
+          </AllocationCell>
+        </tr>
+
+        {/* Row: 17:30-18:30 / (Wed&Thu 17:30-18:20) / (Fri 17:20-18:10) */}
+        <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+          <TimetableCell>
+            17:30
+            <br />|<br />
+            18:30
+          </TimetableCell>
+
+          {/* MON */}
+          <AllocationCell>
+            <TimetableCourseName>Acrobat B</TimetableCourseName>
+            <p>藤本拓未</p>
+          </AllocationCell>
+
+          {/* TUE */}
+          <AllocationCell>
+            <TimetableCourseName>基礎B</TimetableCourseName>
+            <p>小学生以上</p>
+            <p>KUMIIKO</p>
+          </AllocationCell>
+
+          {/* time col (WED) */}
           <TimetableCell>
             17:30
             <br />|<br />
             18:20
           </TimetableCell>
+          {/* WED */}
           <AllocationCell>
             <TimetableCourseName>Jr.D</TimetableCourseName>
-            <br />
-            <p>
-              <BeginnerMarck src={Logo} />
-              小1~小3
-            </p>
-            <p>定員15</p>
+            <p>小1〜小3</p>
+            <p>KUMIIKO</p>
           </AllocationCell>
-          <AllocationCell>
-            <TimetableCourseName>Jr.C</TimetableCourseName>
-            <br />
-            <p>小1~小3</p>
-            <p>定員15</p>
-          </AllocationCell>
-          <TimetableCell>
-            18:00
-            <br />|<br />
-            19:00
-          </TimetableCell>
-          <AllocationCell style={{ borderRight: "none" }}>
-            <TimetableCourseName>基礎</TimetableCourseName>
-            <br />
-            <p>小学生以上</p>
-            <p>定員15(60分)</p>
-          </AllocationCell>
-        </tr>
-        <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+
+          {/* time col (THU) */}
           <TimetableCell>
             17:30
             <br />|<br />
-            18:50
+            18:20
           </TimetableCell>
+          {/* THU */}
           <AllocationCell>
-            <TimetableCourseName>基礎</TimetableCourseName>
-            <br />
-            <p>小学生以上</p>
-            <p>定員15(60分)</p>
+            <TimetableCourseName>Jr.C</TimetableCourseName>
+            <p>小1〜小3</p>
+            <p>KUMIIKO</p>
           </AllocationCell>
+
+          {/* time col (FRI) */}
+          <TimetableCell>
+            17:20
+            <br />|<br />
+            18:10
+          </TimetableCell>
+          {/* FRI */}
+          <AllocationCell style={{ borderRight: "none" }}>
+            <TimetableCourseName>Jr.E</TimetableCourseName>
+            <p>小1〜小3</p>
+            <p>MAI</p>
+          </AllocationCell>
+        </tr>
+
+        {/* Row: 18:40-19:40 / (Wed&Thu 18:30-19:20) / (Fri 18:20-19:20) */}
+        <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+          <TimetableCell>
+            18:40
+            <br />|<br />
+            19:40
+          </TimetableCell>
+
+          {/* MON */}
+          <AllocationCell>
+            <TimetableCourseName>Acrobat A</TimetableCourseName>
+            <p>藤本拓未</p>
+          </AllocationCell>
+
+          {/* TUE */}
+          <AllocationCell />
+
+          {/* time col (WED) */}
           <TimetableCell>
             18:30
             <br />|<br />
             19:20
           </TimetableCell>
+          {/* WED */}
           <AllocationCell>
             <TimetableCourseName>Jr.B</TimetableCourseName>
-            <br />
-            <p>
-              <BeginnerMarck src={Logo} />
-              小4~小6
-            </p>
-            <p>定員15</p>
+            <p>小4〜小6</p>
+            <p>KUMIIKO</p>
           </AllocationCell>
+
+          {/* time col (THU) */}
+          <TimetableCell>
+            18:30
+            <br />|<br />
+            19:20
+          </TimetableCell>
+          {/* THU */}
           <AllocationCell>
             <TimetableCourseName>Jr.A</TimetableCourseName>
-            <br />
-            <p>小4~小6</p>
-            <p>定員15</p>
+            <p>小4〜小6</p>
+            <p>KUMIIKO</p>
           </AllocationCell>
+
+          {/* time col (FRI) */}
           <TimetableCell>
-            19:10
+            18:20
             <br />|<br />
-            20:25
+            19:20
           </TimetableCell>
+          {/* FRI */}
           <AllocationCell style={{ borderRight: "none" }}>
-            <TimetableCourseName>S</TimetableCourseName>
-            <br />
-            選抜クラス
+            <TimetableCourseName>基礎A</TimetableCourseName>
+            <p>小学生以上</p>
+            <p>KUMIIKO</p>
           </AllocationCell>
         </tr>
+
+        {/* Row: (Wed 19:30-21:00) / (Thu 19:30-20:30) / (Fri 19:30-21:00) */}
         <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
-          <TimetableCell style={{ borderBottom: "none" }}></TimetableCell>
-          <AllocationCell style={{ borderBottom: "none" }}></AllocationCell>
+          <TimetableCell style={{ borderBottom: "none" }} />
+
+          {/* MON */}
+          <AllocationCell style={{ borderBottom: "none" }} />
+          {/* TUE */}
+          <AllocationCell style={{ borderBottom: "none" }} />
+
+          {/* time col (WED) */}
           <TimetableCell style={{ borderBottom: "none" }}>
-            19:40
+            19:30
             <br />|<br />
-            20:40
+            21:00
           </TimetableCell>
-          <AllocationCell style={{ borderBottom: "none" }}></AllocationCell>
+          {/* WED */}
           <AllocationCell style={{ borderBottom: "none" }}>
-            <TimetableCourseName>Teen's</TimetableCourseName>
-            <br />
-            <p>中学生以上</p>
-            <p>定員15</p>
+            <TimetableCourseName>中学生選抜</TimetableCourseName>
+            <p>KUMIIKO</p>
           </AllocationCell>
-          <TimetableCell style={{ borderBottom: "none" }}></TimetableCell>
+
+          {/* time col (THU) */}
+          <TimetableCell style={{ borderBottom: "none" }}>
+            19:30
+            <br />|<br />
+            20:30
+          </TimetableCell>
+          {/* THU */}
+          <AllocationCell style={{ borderBottom: "none" }}>
+            <TimetableCourseName>Teens</TimetableCourseName>
+            <p>中学生以上</p>
+            <p>KUMIIKO</p>
+          </AllocationCell>
+
+          {/* time col (FRI) */}
+          <TimetableCell style={{ borderBottom: "none" }}>
+            19:30
+            <br />|<br />
+            21:00
+          </TimetableCell>
+          {/* FRI */}
           <AllocationCell style={{ borderRight: "none", borderBottom: "none" }}>
-            <TimetableCourseName></TimetableCourseName>
+            <TimetableCourseName>小学生選抜</TimetableCourseName>
+            <p>KUMIIKO</p>
           </AllocationCell>
         </tr>
       </TableContainer>
+
       <LessonExplanationContainer>
-        <p>※タイムテーブルは年度毎に変更していく可能性があります。</p>
         <p>
-          ※
-          <img
-            src={Logo}
-            style={{ height: "12px", transform: "translateY(15%)" }}
-            alt="初心者マーク"
-          ></img>
-          マーク・・・ダンス歴１年未満の方対象ビギナークラス
-        </p>
-        <p>※木曜日クラス (A・C) ・・・受講歴２年以上のアドバンスクラス</p>
-        <p>
-          ※Sクラス・・・小学４年生以上の選抜クラス
-          (オーデション合格者のみ受講可){" "}
+          ※タイムテーブルは年度毎に変更していく可能性があります。ご了承ください。（2026年1月改訂）
         </p>
       </LessonExplanationContainer>
-      <Title title="COURSE"></Title>
+
+      {/* ===== Price (画像内容に合わせて更新) ===== */}
+      <Title title="COURSE" />
+
       <PriceNotationContainer>
         <PriceNotationItem>
           <p style={{ fontSize: "16px" }}>入会金</p>
           ¥5,500円
         </PriceNotationItem>
       </PriceNotationContainer>
+
       <CourseTableContainer>
         <tr
           style={{
@@ -287,9 +373,11 @@ const Lesson = () => {
           }}
         >
           <CourseCellTop style={{ flex: 3 }}>受講コース</CourseCellTop>
-          <CourseCellTop>受講料月払い</CourseCellTop>
-          <CourseCellTop>受講料年払い</CourseCellTop>
+          <CourseCellTop>受講料</CourseCellTop>
+          <CourseCellTop>年払い</CourseCellTop>
         </tr>
+
+        {/* 1 */}
         <tr
           style={{
             width: "100%",
@@ -299,10 +387,14 @@ const Lesson = () => {
             borderTop: "2px solid #2c3e50",
           }}
         >
-          <CourseCell style={{ flex: 3 }}>月4回 (50分) コース</CourseCell>
-          <CourseCell>¥5,500</CourseCell>
-          <CourseCell>¥64,625</CourseCell>
+          <CourseCell style={{ flex: 3 }}>
+            月4回　チア一般クラス（50分）
+          </CourseCell>
+          <CourseCell>¥6,000</CourseCell>
+          <CourseCell>¥70,500</CourseCell>
         </tr>
+
+        {/* 2 */}
         <tr
           style={{
             width: "100%",
@@ -311,10 +403,12 @@ const Lesson = () => {
             padding: "15px 0px",
           }}
         >
-          <CourseCell style={{ flex: 3 }}>月8回 (50分+基礎) コース</CourseCell>_
-          <CourseCell>¥11,000</CourseCell>
-          <CourseCell>¥130,625</CourseCell>
+          <CourseCell style={{ flex: 3 }}>月4回　基礎クラス（60分）</CourseCell>
+          <CourseCell>¥6,500</CourseCell>
+          <CourseCell>¥76,375</CourseCell>
         </tr>
+
+        {/* 3 */}
         <tr
           style={{
             width: "100%",
@@ -324,11 +418,13 @@ const Lesson = () => {
           }}
         >
           <CourseCell style={{ flex: 3 }}>
-            月4回 基礎クラスのみ(60分)
+            月8回　［チア一般＋基礎］コース
           </CourseCell>
-          <CourseCell>¥6,000</CourseCell>
-          <CourseCell>¥70,500</CourseCell>
+          <CourseCell>¥12,000</CourseCell>
+          <CourseCell>¥142,500</CourseCell>
         </tr>
+
+        {/* 4 */}
         <tr
           style={{
             width: "100%",
@@ -337,10 +433,14 @@ const Lesson = () => {
             padding: "15px 0px",
           }}
         >
-          <CourseCell style={{ flex: 3 }}>Sクラス※据え置き</CourseCell>
-          <CourseCell>¥7,000</CourseCell>
-          <CourseCell>¥82,250</CourseCell>
+          <CourseCell style={{ flex: 3 }}>
+            月4回　小学生選抜クラス（90分）
+          </CourseCell>
+          <CourseCell>¥8,000</CourseCell>
+          <CourseCell>¥94,000</CourseCell>
         </tr>
+
+        {/* 5 */}
         <tr
           style={{
             width: "100%",
@@ -349,10 +449,46 @@ const Lesson = () => {
             padding: "15px 0px",
           }}
         >
-          <CourseCell style={{ flex: 3 }}>Sクラス+基礎</CourseCell>
+          <CourseCell style={{ flex: 3 }}>
+            月8回　［小学生選抜＋基礎］コース
+          </CourseCell>
+          <CourseCell>¥14,000</CourseCell>
+          <CourseCell>¥166,000</CourseCell>
+        </tr>
+
+        {/* 6 */}
+        <tr
+          style={{
+            width: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+            padding: "15px 0px",
+          }}
+        >
+          <CourseCell style={{ flex: 3 }}>
+            月4回　Teensクラス（60分）
+          </CourseCell>
+          <CourseCell>¥6,500</CourseCell>
+          <CourseCell>¥76,375</CourseCell>
+        </tr>
+
+        {/* 7 */}
+        <tr
+          style={{
+            width: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+            padding: "15px 0px",
+          }}
+        >
+          <CourseCell style={{ flex: 3 }}>
+            月8回　［Teens＋基礎］コース
+          </CourseCell>
           <CourseCell>¥12,500</CourseCell>
-          <CourseCell>¥148,438</CourseCell>
+          <CourseCell>¥148,375</CourseCell>
         </tr>
+
+        {/* 8 */}
         <tr
           style={{
             width: "100%",
@@ -361,10 +497,46 @@ const Lesson = () => {
             padding: "15px 0px",
           }}
         >
-          <CourseCell style={{ flex: 3 }}>Teensクラス(60分)</CourseCell>
-          <CourseCell>¥6,000</CourseCell>
-          <CourseCell>¥70,500</CourseCell>
+          <CourseCell style={{ flex: 3 }}>
+            月4回　中高生選抜クラス（90分）
+          </CourseCell>
+          <CourseCell>¥8,000</CourseCell>
+          <CourseCell>¥94,000</CourseCell>
         </tr>
+
+        {/* 9 */}
+        <tr
+          style={{
+            width: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+            padding: "15px 0px",
+          }}
+        >
+          <CourseCell style={{ flex: 3 }}>
+            月8回　［中高生選抜＋基礎］コース
+          </CourseCell>
+          <CourseCell>¥14,000</CourseCell>
+          <CourseCell>¥166,000</CourseCell>
+        </tr>
+
+        {/* 10 */}
+        <tr
+          style={{
+            width: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+            padding: "15px 0px",
+          }}
+        >
+          <CourseCell style={{ flex: 3 }}>
+            月2回　Acrobatクラス（60分）
+          </CourseCell>
+          <CourseCell>¥4,400</CourseCell>
+          <CourseCell>—</CourseCell>
+        </tr>
+
+        {/* 11 */}
         <tr
           style={{
             width: "100%",
@@ -374,15 +546,18 @@ const Lesson = () => {
             borderBottom: "2px solid #2c3e50",
           }}
         >
-          <CourseCell style={{ flex: 3 }}>Teensクラス(T+基礎)</CourseCell>
-          <CourseCell>¥11,500</CourseCell>
-          <CourseCell>¥136,563</CourseCell>
+          <CourseCell style={{ flex: 3 }}>月2回　Acrobatクラスのみ</CourseCell>
+          <CourseCell>¥5,000</CourseCell>
+          <CourseCell>—</CourseCell>
         </tr>
       </CourseTableContainer>
+
       <LessonExplanationContainer>
-        <p>※価格は全て税込価格になります。</p>
-        <p>※受講料を年払いにしていただくと少しお安くなっております。</p>
-        <p>※年度途中での年払い制度のご利用はできません。</p>
+        <p>※金額は全て税込価格になります。</p>
+        <p>
+          ※受講料を年払いしていただくと少しお安くなっております。（アクロバットクラスは割引適用外。）
+        </p>
+        <p>※年度の途中での年払い制度のご利用は出来ません。</p>
       </LessonExplanationContainer>
     </BodyContainer>
   );
