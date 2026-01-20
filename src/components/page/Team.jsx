@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import PomLogo from "../../../assets/images/S__18464797.png";
@@ -240,9 +240,7 @@ const Team = () => {
           <PomdollPerformance>
             ソレイユフェスキッズアワードステージ出演
           </PomdollPerformance>
-          <PomdollPerformance>
-            野々市じょんからまつり出演
-          </PomdollPerformance>
+          <PomdollPerformance>野々市じょんからまつり出演</PomdollPerformance>
           <PomdollPerformance>
             子育て支援メッセいしかわステージ出演
           </PomdollPerformance>
@@ -255,18 +253,10 @@ const Team = () => {
           <PomdollPerformance>
             ヴィンセドール白山ホームゲームパフォーマンス出演
           </PomdollPerformance>
-          <PomdollPerformance>
-            まちなかキッズステージ出演
-          </PomdollPerformance>
-          <PomdollPerformance>
-            ばばパンまつり出演
-          </PomdollPerformance>
-          <PomdollPerformance>
-            かがやきフェス2023出演
-          </PomdollPerformance>
-          <PomdollPerformance>
-            石川演芸文化祭出演
-          </PomdollPerformance>
+          <PomdollPerformance>まちなかキッズステージ出演</PomdollPerformance>
+          <PomdollPerformance>ばばパンまつり出演</PomdollPerformance>
+          <PomdollPerformance>かがやきフェス2023出演</PomdollPerformance>
+          <PomdollPerformance>石川演芸文化祭出演</PomdollPerformance>
           <PomdollPerformance>
             <PomdollPerformanceStrong>
               ラグビースペシャルマッチ
@@ -275,12 +265,8 @@ const Team = () => {
             <br />
             オープニングパフォーマンス
           </PomdollPerformance>
-          <PomdollPerformance>
-            ののいちカレーフェス出演
-          </PomdollPerformance>
-          <PomdollPerformance>
-            JA農業祭出演 etc…
-          </PomdollPerformance>
+          <PomdollPerformance>ののいちカレーフェス出演</PomdollPerformance>
+          <PomdollPerformance>JA農業祭出演 etc…</PomdollPerformance>
         </ul>
         <Title title="MV出演"></Title>
         <ul style={{ marginBottom: "100px" }}>
