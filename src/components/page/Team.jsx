@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import PomLogo from "../../../assets/images/S__18464797.png";
-import PomImg1 from "../../../assets/images/2023-12-29/image0.jpg";
-import PomImg2 from "../../../assets/images/2023-12-29/image1.jpg";
-import PomImg3 from "../../../assets/images/2023-12-29/image2.jpg";
-import PomImg4 from "../../../assets/images/2023-12-29/image3.jpg";
-import PomImg5 from "../../../assets/images/2023-12-29/image4.jpg";
-import PomImg6 from "../../../assets/images/2023-12-29/image5.jpg";
-import PomImg7 from "../../../assets/images/2023-12-29/image6.jpg";
-import PomImg8 from "../../../assets/images/2023-12-29/image7.jpg";
-import PomImg9 from "../../../assets/images/2023-12-29/image8.jpg";
+import PomImg1 from "../../../assets/images/2026-01-15/image0.jpg";
+import PomImg2 from "../../../assets/images/2026-01-15/image1.jpg";
+import PomImg3 from "../../../assets/images/2026-01-15/image2.jpg";
+import PomImg4 from "../../../assets/images/2026-01-15/image3.jpg";
+import PomImg5 from "../../../assets/images/2026-01-15/image4.jpg";
+import PomImg6 from "../../../assets/images/2026-01-15/image5.jpg";
+import PomImg7 from "../../../assets/images/2026-01-15/image6.jpg";
+import PomImg8 from "../../../assets/images/2026-01-15/image7.jpg";
+import PomImg9 from "../../../assets/images/2026-01-15/image8.jpg";
+import PomImg10 from "../../../assets/images/2026-01-15/image9.jpg";
+import PomImg11 from "../../../assets/images/2026-01-15/image10.jpg";
+import PomImg12 from "../../../assets/images/2026-01-15/image11.jpg";
 import Title from "../common/PageTitle.jsx";
 
 const Container = styled.div`
@@ -99,13 +102,16 @@ const Team = () => {
   const [pom7Opacity, setPom7Opacity] = useState(false);
   const [pom8Opacity, setPom8Opacity] = useState(false);
   const [pom9Opacity, setPom9Opacity] = useState(false);
+  const [pom10Opacity, setPom10Opacity] = useState(false);
+  const [pom11Opacity, setPom11Opacity] = useState(false);
+  const [pom12Opacity, setPom12Opacity] = useState(false);
 
   let counter = 2;
 
   useEffect(() => {
     setInterval(() => {
       if (counter === 1) {
-        setPom9Opacity(false);
+        setPom12Opacity(false);
         setPom1Opacity(true);
       } else if (counter === 2) {
         setPom1Opacity(false);
@@ -131,9 +137,18 @@ const Team = () => {
       } else if (counter === 9) {
         setPom8Opacity(false);
         setPom9Opacity(true);
+      } else if (counter === 10) {
+        setPom9Opacity(false);
+        setPom10Opacity(true);
+      } else if (counter === 11) {
+        setPom10Opacity(false);
+        setPom11Opacity(true);
+      } else if (counter === 12) {
+        setPom11Opacity(false);
+        setPom12Opacity(true);
       }
 
-      counter === 9 ? (counter = 1) : (counter = counter + 1);
+      counter === 12 ? (counter = 1) : (counter = counter + 1);
     }, 3000);
   }, []);
   const [load, setLoad] = useState(false);
@@ -149,12 +164,12 @@ const Team = () => {
         <Title title="TEAM"></Title>
         <PomdollLogo />
         <PomdollTextContainer>
-          <p>2016年より石川県内にて活動スタート。</p>
-          <p>4才〜小中学生のGirlsを対象にしたキッズチアダンス チームです。</p>
+          <p>2016年より石川県内にて活動をスタート。</p>
           <p>
-            エンターテイメント性の高い“魅せるダンス”を目指して
-            レッスンをしています。踊っている本人だけではなく、Pomdollのダンスを見ていただいた方々も楽しい気持ちや元気を届けられる様な
-            そんなパワーの溢れるチームを目指しています。
+            エンターテイメント性の高い「魅せるダンス」を追求するキッズチアダンスチームです。
+          </p>
+          <p>
+            踊っている本人だけでなく、Pomdollのパフォーマンスをご覧いただいたすべての方に、楽しさや元気を届けられるような、パワーあふれるチームを目指しています♪
           </p>
         </PomdollTextContainer>
         <PomdollImageContainer>
@@ -204,20 +219,88 @@ const Team = () => {
             opacity={pom9Opacity}
             src={PomImg9}
           />
+          <PomdollImage
+            alt="Pomdollの画像10"
+            opacity={pom10Opacity}
+            src={PomImg10}
+          />
+          <PomdollImage
+            alt="Pomdollの画像11"
+            opacity={pom11Opacity}
+            src={PomImg11}
+          />
+          <PomdollImage
+            alt="Pomdollの画像12"
+            opacity={pom12Opacity}
+            src={PomImg12}
+          />
         </PomdollImageContainer>
-        <Title title="TOURNAMENT HISTORY"></Title>
+        <Title title="HISTORY"></Title>
         <ul style={{ marginBottom: "100px" }}>
           <PomdollPerformance>
-            <PomdollPerformanceStrong>
-              全国ダンスパフォーマンスコンテスト
-            </PomdollPerformanceStrong>
-            決勝大会出場
+            ソレイユフェスキッズアワードステージ出演
+          </PomdollPerformance>
+          <PomdollPerformance>
+            野々市じょんからまつり出演
+          </PomdollPerformance>
+          <PomdollPerformance>
+            子育て支援メッセいしかわステージ出演
+          </PomdollPerformance>
+          <PomdollPerformance>
+            金沢武士団ホームゲームパフォーマンス出演
+          </PomdollPerformance>
+          <PomdollPerformance>
+            ツエーゲン金沢イベントステージ出演
+          </PomdollPerformance>
+          <PomdollPerformance>
+            ヴィンセドール白山ホームゲームパフォーマンス出演
+          </PomdollPerformance>
+          <PomdollPerformance>
+            まちなかキッズステージ出演
+          </PomdollPerformance>
+          <PomdollPerformance>
+            ばばパンまつり出演
+          </PomdollPerformance>
+          <PomdollPerformance>
+            かがやきフェス2023出演
+          </PomdollPerformance>
+          <PomdollPerformance>
+            石川演芸文化祭出演
           </PomdollPerformance>
           <PomdollPerformance>
             <PomdollPerformanceStrong>
-              第11回全日本小中学生ダンスコンクール西日本大会
+              ラグビースペシャルマッチ
             </PomdollPerformanceStrong>
-            銀賞
+            ALL早稲田大学VSALL慶應義塾大学
+            <br />
+            オープニングパフォーマンス
+          </PomdollPerformance>
+          <PomdollPerformance>
+            ののいちカレーフェス出演
+          </PomdollPerformance>
+          <PomdollPerformance>
+            JA農業祭出演 etc…
+          </PomdollPerformance>
+        </ul>
+        <Title title="MV出演"></Title>
+        <ul style={{ marginBottom: "100px" }}>
+          <PomdollPerformance>
+            ビーバー公式テーマソング「ビバ・ビーバーサンバ」MV出演
+          </PomdollPerformance>
+        </ul>
+        <Title title="映画"></Title>
+        <ul style={{ marginBottom: "100px" }}>
+          <PomdollPerformance>
+            「オンデマンド」エキストラ出演
+          </PomdollPerformance>
+        </ul>
+        <Title title="コンテスト"></Title>
+        <ul style={{ marginBottom: "100px" }}>
+          <PomdollPerformance>
+            <PomdollPerformanceStrong>
+              第９回全日本小中学生ダンスコンクール
+            </PomdollPerformanceStrong>
+            全国大会　銅賞
           </PomdollPerformance>
           <PomdollPerformance>
             <PomdollPerformanceStrong>TALK 2U U-12</PomdollPerformanceStrong>
@@ -241,43 +324,58 @@ const Team = () => {
           </PomdollPerformance>
           <PomdollPerformance>
             <PomdollPerformanceStrong>
-              全国ダンスパフォーマンスコンテスト
+              全国ダンスパフォーマンスコンテスト2023
             </PomdollPerformanceStrong>
-            予選通過
+            全国決勝大会出場
           </PomdollPerformance>
           <PomdollPerformance>
             <PomdollPerformanceStrong>
-              第９回全日本小中学生ダンスコンクール
+              第11回全日本小中学生ダンスコンクール西日本大会
+            </PomdollPerformanceStrong>
+            銀賞
+          </PomdollPerformance>
+          <PomdollPerformance>
+            <PomdollPerformanceStrong>
+              JHCダンスコンテスト2023 FINAL
+            </PomdollPerformanceStrong>
+            出場
+          </PomdollPerformance>
+          <PomdollPerformance>
+            <PomdollPerformanceStrong>
+              全国ダンスパフォーマンスコンテスト2024
+            </PomdollPerformanceStrong>
+            全国決勝大会出場
+          </PomdollPerformance>
+          <PomdollPerformance>
+            <PomdollPerformanceStrong>
+              第12回全日本小中学生ダンスコンクール西日本大会
             </PomdollPerformanceStrong>
             銅賞
           </PomdollPerformance>
-        </ul>
-        <Title title="PERFORMANCE"></Title>
-        <ul>
           <PomdollPerformance>
-            ソレイユフェスキッズアワード2016・2017出演
+            <PomdollPerformanceStrong>
+              全国ダンスパフォーマンスコンテスト2025
+            </PomdollPerformanceStrong>
+            小学生オープン部門　レギュラー編成　優勝
           </PomdollPerformance>
           <PomdollPerformance>
-            金沢武士団ホームゲームハーフタイムショー出演
-          </PomdollPerformance>
-          <PomdollPerformance>じょんからまつり出演</PomdollPerformance>
-          <PomdollPerformance>
-            子育て支援メッセいしかわ2017・2018出演
-          </PomdollPerformance>
-          <PomdollPerformance>まちなかキッズステージ出演</PomdollPerformance>
-
-          <PomdollPerformance>
-            ソレイユフェスキッズアワード2016・2017出演
+            <PomdollPerformanceStrong>
+              第13回全日本小中学生ダンスコンクール東海大会
+            </PomdollPerformanceStrong>
+            銀賞
           </PomdollPerformance>
           <PomdollPerformance>
-            金沢武士団ホームゲームハーフタイムショー出演
+            <PomdollPerformanceStrong>
+              FUKUI DANCE CUP 2025
+            </PomdollPerformanceStrong>
+            応援ダンス賞
           </PomdollPerformance>
-          <PomdollPerformance>じょんからまつり出演</PomdollPerformance>
           <PomdollPerformance>
-            子育て支援メッセいしかわ2017・2018出演
+            <PomdollPerformanceStrong>
+              JHCダンスコンテスト2025 FINAL
+            </PomdollPerformanceStrong>
+            FREESTYLE部門　小学生編成　3位
           </PomdollPerformance>
-          <PomdollPerformance>まちなかキッズステージ出演</PomdollPerformance>
-          <PomdollPerformance>etc...</PomdollPerformance>
         </ul>
       </Container>
     </BodyContainer>
