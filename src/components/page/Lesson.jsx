@@ -3,10 +3,26 @@ import styled from "styled-components";
 
 import Title from "../common/PageTitle.jsx";
 
+const TableWrapper = styled.div`
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+
+  @media (max-width: 768px) {
+    margin: 0 -15px;
+    width: calc(100% + 30px);
+    padding: 0 15px;
+  }
+`;
+
 const TableContainer = styled.table`
   width: 100%;
   border: 2px solid #34495e;
-  margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    min-width: 600px;
+  }
 `;
 const WeekTimetableCell = styled.th`
   font-size: 18px;
@@ -126,226 +142,230 @@ const Lesson = () => {
       <Title title="LESSON SCHEDULE" />
 
       {/* ===== Timetable (画像内容に合わせて更新) ===== */}
-      <TableContainer>
-        {/* header */}
-        <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
-          <TimetableCell />
-          <WeekTimetableCell>MON</WeekTimetableCell>
-          <WeekTimetableCell>TUE</WeekTimetableCell>
-          <TimetableCell />
-          <WeekTimetableCell>WED</WeekTimetableCell>
-          <TimetableCell />
-          <WeekTimetableCell>THU</WeekTimetableCell>
-          <TimetableCell />
-          <WeekTimetableCell>FRI</WeekTimetableCell>
-        </tr>
+      <TableWrapper>
+        <TableContainer>
+          {/* header */}
+          <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+            <TimetableCell />
+            <WeekTimetableCell>MON</WeekTimetableCell>
+            <WeekTimetableCell>TUE</WeekTimetableCell>
+            <TimetableCell />
+            <WeekTimetableCell>WED</WeekTimetableCell>
+            <TimetableCell />
+            <WeekTimetableCell>THU</WeekTimetableCell>
+            <TimetableCell />
+            <WeekTimetableCell>FRI</WeekTimetableCell>
+          </tr>
 
-        {/* Row: 16:30-17:20 / (Fri 16:20-17:10) */}
-        <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
-          <TimetableCell>
-            16:30
-            <br />|<br />
-            17:20
-          </TimetableCell>
+          {/* Row: 16:30-17:20 / (Fri 16:20-17:10) */}
+          <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+            <TimetableCell>
+              16:30
+              <br />|<br />
+              17:20
+            </TimetableCell>
 
-          {/* MON */}
-          <AllocationCell />
-          {/* TUE */}
-          <AllocationCell>
-            <TimetableCourseName>L1</TimetableCourseName>
-            <p>年中〜年長</p>
-            <p>KUMIIKO</p>
-          </AllocationCell>
+            {/* MON */}
+            <AllocationCell />
+            {/* TUE */}
+            <AllocationCell>
+              <TimetableCourseName>L1</TimetableCourseName>
+              <p>年中〜年長</p>
+              <p>KUMIIKO</p>
+            </AllocationCell>
 
-          {/* time col (for WED) */}
-          <TimetableCell />
-          {/* WED */}
-          <AllocationCell />
+            {/* time col (for WED) */}
+            <TimetableCell />
+            {/* WED */}
+            <AllocationCell />
 
-          {/* time col (for THU) */}
-          <TimetableCell />
-          {/* THU */}
-          <AllocationCell />
+            {/* time col (for THU) */}
+            <TimetableCell />
+            {/* THU */}
+            <AllocationCell />
 
-          {/* time col (for FRI) */}
-          <TimetableCell>
-            16:20
-            <br />|<br />
-            17:10
-          </TimetableCell>
-          {/* FRI */}
-          <AllocationCell style={{ borderRight: "none" }}>
-            <TimetableCourseName>L2</TimetableCourseName>
-            <p>年中〜年長</p>
-            <p>MAI</p>
-          </AllocationCell>
-        </tr>
+            {/* time col (for FRI) */}
+            <TimetableCell>
+              16:20
+              <br />|<br />
+              17:10
+            </TimetableCell>
+            {/* FRI */}
+            <AllocationCell style={{ borderRight: "none" }}>
+              <TimetableCourseName>L2</TimetableCourseName>
+              <p>年中〜年長</p>
+              <p>MAI</p>
+            </AllocationCell>
+          </tr>
 
-        {/* Row: 17:30-18:30 / (Wed&Thu 17:30-18:20) / (Fri 17:20-18:10) */}
-        <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
-          <TimetableCell>
-            17:30
-            <br />|<br />
-            18:30
-          </TimetableCell>
+          {/* Row: 17:30-18:30 / (Wed&Thu 17:30-18:20) / (Fri 17:20-18:10) */}
+          <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+            <TimetableCell>
+              17:30
+              <br />|<br />
+              18:30
+            </TimetableCell>
 
-          {/* MON */}
-          <AllocationCell>
-            <TimetableCourseName>Acrobat B</TimetableCourseName>
-            <p>藤本拓未</p>
-          </AllocationCell>
+            {/* MON */}
+            <AllocationCell>
+              <TimetableCourseName>Acrobat B</TimetableCourseName>
+              <p>藤本拓未</p>
+            </AllocationCell>
 
-          {/* TUE */}
-          <AllocationCell>
-            <TimetableCourseName>基礎B</TimetableCourseName>
-            <p>小学生以上</p>
-            <p>KUMIIKO</p>
-          </AllocationCell>
+            {/* TUE */}
+            <AllocationCell>
+              <TimetableCourseName>基礎B</TimetableCourseName>
+              <p>小学生以上</p>
+              <p>KUMIIKO</p>
+            </AllocationCell>
 
-          {/* time col (WED) */}
-          <TimetableCell>
-            17:30
-            <br />|<br />
-            18:20
-          </TimetableCell>
-          {/* WED */}
-          <AllocationCell>
-            <TimetableCourseName>Jr.D</TimetableCourseName>
-            <p>小1〜小3</p>
-            <p>KUMIIKO</p>
-          </AllocationCell>
+            {/* time col (WED) */}
+            <TimetableCell>
+              17:30
+              <br />|<br />
+              18:20
+            </TimetableCell>
+            {/* WED */}
+            <AllocationCell>
+              <TimetableCourseName>Jr.D</TimetableCourseName>
+              <p>小1〜小3</p>
+              <p>KUMIIKO</p>
+            </AllocationCell>
 
-          {/* time col (THU) */}
-          <TimetableCell>
-            17:30
-            <br />|<br />
-            18:20
-          </TimetableCell>
-          {/* THU */}
-          <AllocationCell>
-            <TimetableCourseName>Jr.C</TimetableCourseName>
-            <p>小1〜小3</p>
-            <p>KUMIIKO</p>
-          </AllocationCell>
+            {/* time col (THU) */}
+            <TimetableCell>
+              17:30
+              <br />|<br />
+              18:20
+            </TimetableCell>
+            {/* THU */}
+            <AllocationCell>
+              <TimetableCourseName>Jr.C</TimetableCourseName>
+              <p>小1〜小3</p>
+              <p>KUMIIKO</p>
+            </AllocationCell>
 
-          {/* time col (FRI) */}
-          <TimetableCell>
-            17:20
-            <br />|<br />
-            18:10
-          </TimetableCell>
-          {/* FRI */}
-          <AllocationCell style={{ borderRight: "none" }}>
-            <TimetableCourseName>Jr.E</TimetableCourseName>
-            <p>小1〜小3</p>
-            <p>MAI</p>
-          </AllocationCell>
-        </tr>
+            {/* time col (FRI) */}
+            <TimetableCell>
+              17:20
+              <br />|<br />
+              18:10
+            </TimetableCell>
+            {/* FRI */}
+            <AllocationCell style={{ borderRight: "none" }}>
+              <TimetableCourseName>Jr.E</TimetableCourseName>
+              <p>小1〜小3</p>
+              <p>MAI</p>
+            </AllocationCell>
+          </tr>
 
-        {/* Row: 18:40-19:40 / (Wed&Thu 18:30-19:20) / (Fri 18:20-19:20) */}
-        <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
-          <TimetableCell>
-            18:40
-            <br />|<br />
-            19:40
-          </TimetableCell>
+          {/* Row: 18:40-19:40 / (Wed&Thu 18:30-19:20) / (Fri 18:20-19:20) */}
+          <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+            <TimetableCell>
+              18:40
+              <br />|<br />
+              19:40
+            </TimetableCell>
 
-          {/* MON */}
-          <AllocationCell>
-            <TimetableCourseName>Acrobat A</TimetableCourseName>
-            <p>藤本拓未</p>
-          </AllocationCell>
+            {/* MON */}
+            <AllocationCell>
+              <TimetableCourseName>Acrobat A</TimetableCourseName>
+              <p>藤本拓未</p>
+            </AllocationCell>
 
-          {/* TUE */}
-          <AllocationCell />
+            {/* TUE */}
+            <AllocationCell />
 
-          {/* time col (WED) */}
-          <TimetableCell>
-            18:30
-            <br />|<br />
-            19:20
-          </TimetableCell>
-          {/* WED */}
-          <AllocationCell>
-            <TimetableCourseName>Jr.B</TimetableCourseName>
-            <p>小4〜小6</p>
-            <p>KUMIIKO</p>
-          </AllocationCell>
+            {/* time col (WED) */}
+            <TimetableCell>
+              18:30
+              <br />|<br />
+              19:20
+            </TimetableCell>
+            {/* WED */}
+            <AllocationCell>
+              <TimetableCourseName>Jr.B</TimetableCourseName>
+              <p>小4〜小6</p>
+              <p>KUMIIKO</p>
+            </AllocationCell>
 
-          {/* time col (THU) */}
-          <TimetableCell>
-            18:30
-            <br />|<br />
-            19:20
-          </TimetableCell>
-          {/* THU */}
-          <AllocationCell>
-            <TimetableCourseName>Jr.A</TimetableCourseName>
-            <p>小4〜小6</p>
-            <p>KUMIIKO</p>
-          </AllocationCell>
+            {/* time col (THU) */}
+            <TimetableCell>
+              18:30
+              <br />|<br />
+              19:20
+            </TimetableCell>
+            {/* THU */}
+            <AllocationCell>
+              <TimetableCourseName>Jr.A</TimetableCourseName>
+              <p>小4〜小6</p>
+              <p>KUMIIKO</p>
+            </AllocationCell>
 
-          {/* time col (FRI) */}
-          <TimetableCell>
-            18:20
-            <br />|<br />
-            19:20
-          </TimetableCell>
-          {/* FRI */}
-          <AllocationCell style={{ borderRight: "none" }}>
-            <TimetableCourseName>基礎A</TimetableCourseName>
-            <p>小学生以上</p>
-            <p>KUMIIKO</p>
-          </AllocationCell>
-        </tr>
+            {/* time col (FRI) */}
+            <TimetableCell>
+              18:20
+              <br />|<br />
+              19:20
+            </TimetableCell>
+            {/* FRI */}
+            <AllocationCell style={{ borderRight: "none" }}>
+              <TimetableCourseName>基礎A</TimetableCourseName>
+              <p>小学生以上</p>
+              <p>KUMIIKO</p>
+            </AllocationCell>
+          </tr>
 
-        {/* Row: (Wed 19:30-21:00) / (Thu 19:30-20:30) / (Fri 19:30-21:00) */}
-        <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
-          <TimetableCell style={{ borderBottom: "none" }} />
+          {/* Row: (Wed 19:30-21:00) / (Thu 19:30-20:30) / (Fri 19:30-21:00) */}
+          <tr style={{ width: "100%", display: "flex", flexWrap: "wrap" }}>
+            <TimetableCell style={{ borderBottom: "none" }} />
 
-          {/* MON */}
-          <AllocationCell style={{ borderBottom: "none" }} />
-          {/* TUE */}
-          <AllocationCell style={{ borderBottom: "none" }} />
+            {/* MON */}
+            <AllocationCell style={{ borderBottom: "none" }} />
+            {/* TUE */}
+            <AllocationCell style={{ borderBottom: "none" }} />
 
-          {/* time col (WED) */}
-          <TimetableCell style={{ borderBottom: "none" }}>
-            19:30
-            <br />|<br />
-            21:00
-          </TimetableCell>
-          {/* WED */}
-          <AllocationCell style={{ borderBottom: "none" }}>
-            <TimetableCourseName>中高生生選抜</TimetableCourseName>
-            <p>KUMIIKO</p>
-          </AllocationCell>
+            {/* time col (WED) */}
+            <TimetableCell style={{ borderBottom: "none" }}>
+              19:30
+              <br />|<br />
+              21:00
+            </TimetableCell>
+            {/* WED */}
+            <AllocationCell style={{ borderBottom: "none" }}>
+              <TimetableCourseName>中高生選抜</TimetableCourseName>
+              <p>KUMIIKO</p>
+            </AllocationCell>
 
-          {/* time col (THU) */}
-          <TimetableCell style={{ borderBottom: "none" }}>
-            19:30
-            <br />|<br />
-            20:30
-          </TimetableCell>
-          {/* THU */}
-          <AllocationCell style={{ borderBottom: "none" }}>
-            <TimetableCourseName>Teens</TimetableCourseName>
-            <p>中学生以上</p>
-            <p>KUMIIKO</p>
-          </AllocationCell>
+            {/* time col (THU) */}
+            <TimetableCell style={{ borderBottom: "none" }}>
+              19:30
+              <br />|<br />
+              20:30
+            </TimetableCell>
+            {/* THU */}
+            <AllocationCell style={{ borderBottom: "none" }}>
+              <TimetableCourseName>Teens</TimetableCourseName>
+              <p>中学生以上</p>
+              <p>KUMIIKO</p>
+            </AllocationCell>
 
-          {/* time col (FRI) */}
-          <TimetableCell style={{ borderBottom: "none" }}>
-            19:30
-            <br />|<br />
-            21:00
-          </TimetableCell>
-          {/* FRI */}
-          <AllocationCell style={{ borderRight: "none", borderBottom: "none" }}>
-            <TimetableCourseName>小学生選抜</TimetableCourseName>
-            <p>KUMIIKO</p>
-          </AllocationCell>
-        </tr>
-      </TableContainer>
+            {/* time col (FRI) */}
+            <TimetableCell style={{ borderBottom: "none" }}>
+              19:30
+              <br />|<br />
+              21:00
+            </TimetableCell>
+            {/* FRI */}
+            <AllocationCell
+              style={{ borderRight: "none", borderBottom: "none" }}
+            >
+              <TimetableCourseName>小学生選抜</TimetableCourseName>
+              <p>KUMIIKO</p>
+            </AllocationCell>
+          </tr>
+        </TableContainer>
+      </TableWrapper>
 
       <LessonExplanationContainer>
         <p>
