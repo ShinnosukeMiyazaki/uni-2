@@ -71,6 +71,10 @@ const InfoMail = styled.a`
   &:hover {
     opacity: 0.8;
   }
+  @media (max-width: 600px) {
+    font-size: 1.6rem;
+    padding: 20px;
+  }
 `;
 
 const BodyContainer = styled.div`
