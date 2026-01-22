@@ -37,7 +37,8 @@ const WeekTimetableCell = styled.th`
   }
 `;
 const TimetableCell = styled.th`
-  font-size: 18px;
+  font-size: 12px;
+  max-width: 34px;
   padding: 15px 0;
   text-align: center;
   border-right: 2px solid #34495e;
@@ -65,7 +66,7 @@ const AllocationCell = styled.th`
   }
 `;
 const TimetableCourseName = styled.h4`
-  font-size: 20px;
+  font-size: 18px;
   @media (max-width: 600px) {
     font-size: 16px;
   }
