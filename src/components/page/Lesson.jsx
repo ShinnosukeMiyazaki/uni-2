@@ -66,9 +66,15 @@ const AllocationCell = styled.th`
   }
 `;
 const TimetableCourseName = styled.h4`
-  font-size: 18px;
+  font-size: 16px;
+`;
+
+const InstructorName = styled.p`
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 2px;
   @media (max-width: 600px) {
-    font-size: 16px;
+    font-size: 12px;
   }
 `;
 
@@ -172,7 +178,7 @@ const Lesson = () => {
             <AllocationCell>
               <TimetableCourseName>L1</TimetableCourseName>
               <p>年中〜年長</p>
-              <p>KUMIIKO</p>
+              <InstructorName>KUMIIKO</InstructorName>
             </AllocationCell>
 
             {/* time col (for WED) */}
@@ -195,7 +201,7 @@ const Lesson = () => {
             <AllocationCell style={{ borderRight: "none" }}>
               <TimetableCourseName>L2</TimetableCourseName>
               <p>年中〜年長</p>
-              <p>MAI</p>
+              <InstructorName>MAI</InstructorName>
             </AllocationCell>
           </tr>
 
@@ -210,14 +216,14 @@ const Lesson = () => {
             {/* MON */}
             <AllocationCell>
               <TimetableCourseName>Acrobat B</TimetableCourseName>
-              <p>藤本拓未</p>
+              <InstructorName>藤本拓未</InstructorName>
             </AllocationCell>
 
             {/* TUE */}
             <AllocationCell>
               <TimetableCourseName>基礎B</TimetableCourseName>
               <p>小学生以上</p>
-              <p>KUMIIKO</p>
+              <InstructorName>KUMIIKO</InstructorName>
             </AllocationCell>
 
             {/* time col (WED) */}
@@ -230,7 +236,7 @@ const Lesson = () => {
             <AllocationCell>
               <TimetableCourseName>Jr.D</TimetableCourseName>
               <p>小1〜小3</p>
-              <p>KUMIIKO</p>
+              <InstructorName>KUMIIKO</InstructorName>
             </AllocationCell>
 
             {/* time col (THU) */}
@@ -243,7 +249,7 @@ const Lesson = () => {
             <AllocationCell>
               <TimetableCourseName>Jr.C</TimetableCourseName>
               <p>小1〜小3</p>
-              <p>KUMIIKO</p>
+              <InstructorName>KUMIIKO</InstructorName>
             </AllocationCell>
 
             {/* time col (FRI) */}
@@ -256,7 +262,7 @@ const Lesson = () => {
             <AllocationCell style={{ borderRight: "none" }}>
               <TimetableCourseName>Jr.E</TimetableCourseName>
               <p>小1〜小3</p>
-              <p>MAI</p>
+              <InstructorName>MAI</InstructorName>
             </AllocationCell>
           </tr>
 
@@ -271,7 +277,7 @@ const Lesson = () => {
             {/* MON */}
             <AllocationCell>
               <TimetableCourseName>Acrobat A</TimetableCourseName>
-              <p>藤本拓未</p>
+              <InstructorName>藤本拓未</InstructorName>
             </AllocationCell>
 
             {/* TUE */}
@@ -287,7 +293,7 @@ const Lesson = () => {
             <AllocationCell>
               <TimetableCourseName>Jr.B</TimetableCourseName>
               <p>小4〜小6</p>
-              <p>KUMIIKO</p>
+              <InstructorName>KUMIIKO</InstructorName>
             </AllocationCell>
 
             {/* time col (THU) */}
@@ -300,7 +306,7 @@ const Lesson = () => {
             <AllocationCell>
               <TimetableCourseName>Jr.A</TimetableCourseName>
               <p>小4〜小6</p>
-              <p>KUMIIKO</p>
+              <InstructorName>KUMIIKO</InstructorName>
             </AllocationCell>
 
             {/* time col (FRI) */}
@@ -313,7 +319,7 @@ const Lesson = () => {
             <AllocationCell style={{ borderRight: "none" }}>
               <TimetableCourseName>基礎A</TimetableCourseName>
               <p>小学生以上</p>
-              <p>KUMIIKO</p>
+              <InstructorName>KUMIIKO</InstructorName>
             </AllocationCell>
           </tr>
 
@@ -335,7 +341,7 @@ const Lesson = () => {
             {/* WED */}
             <AllocationCell style={{ borderBottom: "none" }}>
               <TimetableCourseName>中高生選抜</TimetableCourseName>
-              <p>KUMIIKO</p>
+              <InstructorName>KUMIIKO</InstructorName>
             </AllocationCell>
 
             {/* time col (THU) */}
@@ -348,7 +354,7 @@ const Lesson = () => {
             <AllocationCell style={{ borderBottom: "none" }}>
               <TimetableCourseName>Teens</TimetableCourseName>
               <p>中学生以上</p>
-              <p>KUMIIKO</p>
+              <InstructorName>KUMIIKO</InstructorName>
             </AllocationCell>
 
             {/* time col (FRI) */}
@@ -362,7 +368,7 @@ const Lesson = () => {
               style={{ borderRight: "none", borderBottom: "none" }}
             >
               <TimetableCourseName>小学生選抜</TimetableCourseName>
-              <p>KUMIIKO</p>
+              <InstructorName>KUMIIKO</InstructorName>
             </AllocationCell>
           </tr>
         </TableContainer>
