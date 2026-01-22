@@ -99,7 +99,9 @@ const Contact = () => {
           お問い合わせの方は以下のメールアドレスまでご連絡ください。
         </Message>
         <Message> クリックするとメールが立ち上がります。</Message>
-        <InfoMail href="mailto:info@cds-uni.com">info@cds-uni.com</InfoMail>
+        <InfoMail href="mailto:cheerdancestudio.uni@gmail.com">
+          cheerdancestudio.uni@gmail.com
+        </InfoMail>
       </Container>
     </BodyContainer>
   );

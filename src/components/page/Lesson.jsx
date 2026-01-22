@@ -49,7 +49,7 @@ const AllocationCell = styled.th`
   }
 `;
 const TimetableCourseName = styled.h4`
-  font-size: 22px;
+  font-size: 20px;
   @media (max-width: 600px) {
     font-size: 16px;
   }
@@ -316,7 +316,7 @@ const Lesson = () => {
           </TimetableCell>
           {/* WED */}
           <AllocationCell style={{ borderBottom: "none" }}>
-            <TimetableCourseName>中学生選抜</TimetableCourseName>
+            <TimetableCourseName>中高生生選抜</TimetableCourseName>
             <p>KUMIIKO</p>
           </AllocationCell>
 
