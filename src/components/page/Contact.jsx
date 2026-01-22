@@ -62,7 +62,6 @@ const InfoMail = styled.a`
   display: inline-block;
   font-size: 2.4rem;
   padding: 30px;
-  width: 300px;
   margin-top: 100px;
   background-color: #2c3e50;
   color: #ecf0f1;
@@ -97,8 +96,9 @@ const Contact = () => {
         <Title title="CONTACT" />
         <Message>
           お問い合わせの方は以下のメールアドレスまでご連絡ください。
+          <br />
+          クリックするとメールが立ち上がります。
         </Message>
-        <Message> クリックするとメールが立ち上がります。</Message>
         <InfoMail href="mailto:cheerdancestudio.uni@gmail.com">
           cheerdancestudio.uni@gmail.com
         </InfoMail>
